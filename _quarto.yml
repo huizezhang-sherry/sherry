@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - sherry-zhang.pdf
 
 website:
   title: "H. Sherry Zhang"

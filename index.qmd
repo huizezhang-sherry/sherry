@@ -15,7 +15,7 @@ about:
       href: "mailto:huize.Zhang@monash.edu"
     - icon: person-lines-fill
       text: CV
-      href: "sherry-zhang.pdf"
+      href: sherry-zhang.pdf
 # icons are from: https://icons.getbootstrap.com/
 ---
 
