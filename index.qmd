@@ -1,0 +1,24 @@
+---
+title: "About"
+image: avatar.jpeg
+about: 
+  template: jolla
+  links: 
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/huizezhangsh
+    - icon: github
+      text: Github
+      href: https://github.com/huizezhang-sherry
+    - icon: envelope-fill
+      text: Email
+      href: "Huize.Zhang@monash.edu"
+    - icon: person-lines-fill
+      text: CV
+      href: "pdf/sherry-zhang.pdf"
+# icons are from: https://icons.getbootstrap.com/
+---
+
+I'm Sherry, a third year PhD student at Monash University supervised by [Di Cook](http://dicook.org/), [Patricia Menéndez](https://www.patriciamenendez.com/), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://people.csiro.au/L/N/Nicolas-Langrene). My research focuses on exploring multivariate spatio-temporal data. One of my projects focuses on a multivariate methods, projection pursuit. I have designed a few visual diagnostic plots to understand the optimisation in the projection pursuit algorithm. Another project of mine creates a S3 class, [cubble](https://github.com/huizezhang-sherry/cubble), to organise and wrangle spatio-temporal data.
+
+I have tutored various units in Monash's [Master of Business Analytics](https://www.monash.edu/study/courses/find-a-course/2021/business-analytics-b6022) program including ETC5510 Introduction to data analysis, ETC5512 Wild-caught data, and ETC5521 Exploratory Data analysis. This year, I'm the organiser of [Monash NUMBATs](https://numbat.space/) seminar, see the event calendar for some of the past events.

@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/blogs/index.html",
+    "items": [
+      "/blogs/2022-10-12-cran-ecosystem/index.html",
+      "/blogs/2022-05-21-ggplot-sf/index.html"
+    ]
+  },
+  {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/cubble/cubble.html",
+      "/projects/ferrn/ferrn.html"
+    ]
+  }
+]
