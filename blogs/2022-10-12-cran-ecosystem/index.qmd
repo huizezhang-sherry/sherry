@@ -1,14 +1,14 @@
 ---
 title: 'Diving into dependen-"sea"'
 author: "H. Sherry Zhang"
-date: '2022-11-18'
+date: '2022-10-18'
 slug: []
 categories: []
 tags: []
 subtitle: "How CRAN packages are interconnected"
 summary: ''
 authors: []
-lastmod: '2022-11-18T22:49:21+10:00'
+lastmod: '2022-10-18T22:49:21+10:00'
 featured: no
 projects: []
 freeze: true
@@ -77,41 +77,45 @@ Dependency is a transitive relation. This means a package also (indirectly) depe
 
 ```{r eval = FALSE, echo=TRUE}
 #| code-fold: true
-find_all_deps <- function(from, data){
-  print(from)
+find_all_deps <- function(upstream, data){
+  print(upstream)
   dt <- tibble()
   dt2 <- data
   i <- 1
   while(nrow(dt2) > nrow(dt)){
     print(i)
     dt <- dt2
-    n <- paste0("from_", i) 
+    n <- paste0("upstream", i) 
     dt2 <- dt %>% 
-      rename(from = to) %>% 
-      left_join(dep_lookup_tbl %>% select(-type), by = "from") %>% 
-      rename(!!quo_name(n) := from)
+      rename(upstream = downstream) %>% 
+      left_join(dep_lookup_tbl %>% select(-type), by = "upstream") %>% 
+      rename(!!quo_name(n) := upstream)
     i <- i + 1
   }
   
   dep <- dt2 %>%
     pivot_longer(
-      cols = c(contains("from"),  "to"),
-      names_to = "dump", values_to = "to") %>%
-    distinct(to) %>%
-    filter(!is.na(to)) %>%
-    mutate(to = sort(to))
+      cols = c(contains("upstream"),  "downstream"),
+      names_to = "dump", values_to = "downstream") %>%
+    distinct(downstream) %>%
+    filter(!is.na(downstream)) %>%
+    mutate(downstream = sort(downstream))
   return(dep)
 }
 
 dep_all <- dep_lookup_tbl %>% 
-  arrange(-desc(from)) %>% 
-  nest(direct_deps = -from) %>% 
-  mutate(all_deps = map2(from, direct_deps, find_all_deps))
+  arrange(-desc(upstream)) %>% 
+  nest(direct_deps = -upstream) %>% 
+  mutate(all_deps = map2(upstream, direct_deps, find_all_deps))
 
 (edges <- dep_all %>% 
     select(-direct_deps) %>% 
     unnest(all_deps) %>% 
-    filter(!is.na(from), !is.na(to)))
+    filter(!is.na(upstream), !is.na(downstream)))
+```
+
+```{r echo = FALSE, eval = FALSE}
+save(edges, file = here::here("content/post/2022-10-18-cran-rev-dep/edges.rda"))
 ```
 
 ```{r echo = FALSE}
@@ -127,9 +131,9 @@ The plot below shows the number of dependencies and reverse dependencies a packa
 ```{r echo = TRUE}
 #| code-fold: true
 #| column: screen
-nodes <- tibble(id = unique(c(edges$from, edges$to))) %>% 
-  left_join(edges %>% count(from, name = "n_revdep"), by = c("id" = "from")) %>% 
-  left_join(edges %>% count(to, name = "n_dep"), by = c("id" = "to")) %>% 
+nodes <- tibble(id = unique(c(edges$upstream, edges$downstream))) %>% 
+  left_join(edges %>% count(upstream, name = "n_revdep"), by = c("id" = "upstream")) %>% 
+  left_join(edges %>% count(downstream, name = "n_dep"), by = c("id" = "downstream")) %>% 
   filter(!is.na(id)) %>% 
   mutate(n_revdep = ifelse(is.na(n_revdep), 0, n_revdep),
          n_dep = ifelse(is.na(n_dep), 0, n_dep))
@@ -154,19 +158,25 @@ nodes <- nodes %>%
                      id %in% recommended ~ "recommended",
                      TRUE ~ "zzz"))
 ################################################################
+# to deal with zero mark after sqrt tranform
+# https://github.com/tidyverse/ggplot2/issues/980
+mysqrt_trans <- function() {
+    scales::trans_new("mysqrt", 
+              transform = base::sqrt,
+              inverse = function(x) ifelse(x<0, 0, x^2),
+              domain = c(0, Inf))
+}
+
 p <- nodes %>% 
-  mutate(r_dep = rank(n_dep, ties.method = "first"),
-         r_revdep = rank(n_revdep, ties.method = "first"),
-         tooltip = glue::glue("Pkg: {id}, dep: {n_dep}, revdep: {n_revdep}")) %>% 
-  ggplot(aes(x =n_dep, y = n_revdep)) + 
+  mutate(tooltip = glue::glue("Pkg: {id}, dep: {n_dep}, revdep: {n_revdep}")) %>% 
+  ggplot(aes(x = n_dep, y = n_revdep)) + 
   geom_point_interactive(aes(tooltip = tooltip)) +
   ggrepel::geom_text_repel(
     data = nodes %>% filter(n_revdep > 3100),
     aes(color= category, label = id), min.segment.length = 0) +
   scale_color_brewer(palette = "Set1") + 
-  scale_y_continuous(breaks = c(10, 50, 200, 500, 1000, 2500, 5000, 7500, 10000, 15000)) + 
-  scale_x_continuous(limits = c(0,250), breaks = c(0, 1, 5, 10, 20, 40, 80, 120, 160, 200)) + 
-  coord_trans(x = "sqrt", y = "sqrt") +
+  scale_y_continuous(breaks = c(0,  50, 200, 500, 1000, 2500, 5000, 7500, 10000, 15000), trans = "mysqrt") + 
+  scale_x_continuous(breaks = c(0, 1, 5, 10, 20, 40, 80, 120, 160, 200), trans = "mysqrt") + 
   theme(panel.grid.minor = element_blank(),
         legend.position = "bottom") + 
   xlab("Number of dependencies") + 
@@ -177,7 +187,14 @@ girafe(ggobj = p, width_svg = 16, height_svg = 12)
 
 The x and y-axes show the number of dependencies and reverse dependencies of a package. Both coordinates are square root transformed to accommodate for the skewness in both measures. Packages with more than 3100 reverse dependencies are labelled. The label color denotes four groups: those in base R, those labelled as "recommended" by CRAN, and those listed in the [`tidyverse`](https://github.com/tidyverse) and [`r-lib`](https://github.com/r-lib) organisations on GitHub. Expand the color group below to view the package membership:
 
-<details><summary>color group</summary>
+<details>
+
+<summary>
+
+color group
+
+</summary>
+
 ```{r}
 #| code-fold: true
 nodes %>% 
@@ -187,8 +204,8 @@ nodes %>%
   arrange(category = c("base", "recommended", "tidyverse", "r-lib")) %>% 
   gt::gt()
 ```
-</detail>
 
+</detail>
 
 The plot is interactive so you can hover over points of your interest to read the package name and its numbers of (reverse) dependency.
 
@@ -205,7 +222,7 @@ prct_tbl <- purrr::map_dfr(
 
 tgt_pnts <- prct_tbl %>% 
   mutate(p = round(prct, digits = 3)) %>% 
-  filter(p %in% c(0.9, 0.95, 0.99, 0.995, 0.999) |  p < 0.9 | prct == 1 | n == 5) %>% 
+  filter(p %in% c(0.9, 0.95, 0.99, 0.995, 0.999) |  p < 0.9 | prct == 1 |n %in% c(0, 1, 5)) %>% 
   group_by(p) %>% 
   filter(n == min(n))
 
@@ -313,7 +330,8 @@ code
 
 ```{r eval = FALSE, echo = TRUE}
 #| code-fold: true
-more_than5 <- nodes %>% filter(n_revdep > 5) %>% filter(!id%in% wirdos)
+wirdos <- c("brglm", "profileModel", "ExPosition", "prettyGraphs", "seasonal", "x13binary", "scalreg", "lars", "elasticnet")
+more_than5 <- nodes %>% filter(n_revdep > 5) %>% filter(!id %in% wirdos)
 set.seed(123)
 less_than5 <- nodes %>% 
   filter(n_revdep <= 5) %>% 
