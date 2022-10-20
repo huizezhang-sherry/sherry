@@ -12,6 +12,7 @@ lastmod: '2022-10-18T22:49:21+10:00'
 featured: no
 projects: []
 freeze: true
+title-block-style: none
 ---
 
 ```{r setup, include=FALSE}
@@ -43,7 +44,8 @@ The `utils` package provides the function `available.packages()` to extract CRAN
 ```
 
 ```{r eval = FALSE, echo = FALSE}
-save(raw, file = here::here("content/post/2022-10-12-cran-ecosystem/raw.rda"))
+# save and rerun as of 20th Oct
+save(raw, file = here::here("blogs/2022-10-12-cran-ecosystem/raw.rda"))
 ```
 
 ```{r echo = FALSE}
@@ -115,7 +117,7 @@ dep_all <- dep_lookup_tbl %>%
 ```
 
 ```{r echo = FALSE, eval = FALSE}
-save(edges, file = here::here("content/post/2022-10-18-cran-rev-dep/edges.rda"))
+save(edges, file = here::here("blogs/2022-10-12-cran-ecosystem/edges.rda"))
 ```
 
 ```{r echo = FALSE}
@@ -130,7 +132,6 @@ The plot below shows the number of dependencies and reverse dependencies a packa
 
 ```{r echo = TRUE}
 #| code-fold: true
-#| column: screen
 nodes <- tibble(id = unique(c(edges$upstream, edges$downstream))) %>% 
   left_join(edges %>% count(upstream, name = "n_revdep"), by = c("id" = "upstream")) %>% 
   left_join(edges %>% count(downstream, name = "n_dep"), by = c("id" = "downstream")) %>% 
@@ -222,7 +223,7 @@ prct_tbl <- purrr::map_dfr(
 
 tgt_pnts <- prct_tbl %>% 
   mutate(p = round(prct, digits = 3)) %>% 
-  filter(p %in% c(0.9, 0.95, 0.99, 0.995, 0.999) |  p < 0.9 | prct == 1 |n %in% c(0, 1, 5)) %>% 
+  filter(p %in% c(0.9, 0.95, 0.99, 0.995, 0.999) | prct == 1 |n %in% c(0, 1, 5)) %>% 
   group_by(p) %>% 
   filter(n == min(n))
 
@@ -231,7 +232,7 @@ prct_tbl %>%
   geom_line(aes(x = n, y = prct)) + 
   geom_point(data = tgt_pnts, aes(x = n, y = prct)) + 
   geom_label(data = tgt_pnts, aes(x = n, y = prct + 0.01, label = p)) + 
-  scale_x_continuous(breaks = round(c(0:3, 10, 100, tgt_pnts$n, max(prct_tbl$n)))) + 
+  scale_x_continuous(breaks = round(c(tgt_pnts$n, max(prct_tbl$n)))) + 
   coord_trans("pseudo_log") + 
   theme(panel.grid.minor = element_blank()) + 
   ylab("Percentage of CRAN pkgs with <= n reverse dependencies")
@@ -239,9 +240,9 @@ prct_tbl %>%
 
 Whether you have guessed or not:
 
--   73.9% of CRAN packages don't have any reverse dependency;
+-   `r scales::label_percent(accuracy = 0.1)(tgt_pnts %>% filter(n ==0) %>% pull(p))` of CRAN packages don't have any reverse dependency;
 -   fewer than 10% of the packages on CRAN have more than 5 reverse dependencies; and
--   only 1% of the packages have more than 300 reverse dependencies
+-   only 1% of the packages have more than `r tgt_pnts %>% filter(p == 0.99) %>% pull(n)` reverse dependencies
 
 So while the majority of the R packages do not need reverse dependency checks, a small number of core packages need to test against hundreds or even thousands of reverse dependencies for every new release.
 
