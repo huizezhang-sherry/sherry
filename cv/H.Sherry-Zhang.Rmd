@@ -51,9 +51,10 @@ bibliography_entries(here::here("cv/pub.bib"))
 ```{r conf}
 tribble(
   ~ conf, ~ date, ~ where, ~ topic, ~ link,
-  "CANSSI Ontario Stats. Software Conf.", "Nov 2022", "virtual", "(upcoming) Switching between space and time: Spatio-temporal analysis with cubble", "https://canssiontario.utoronto.ca/event/statistical-software-conference/",
   
-  "ECSS Mini Conf. 2022", "Nov 2022", "virtual", "(upcoming) Switching between space and time: Spatio-temporal analysis with cubble", "https://ecssmini2022.netlify.app/",
+  "ECSS Mini Conf. 2022", "Nov 2022", "virtual", "(upcoming) Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-ecssmini2022.netlify.app/",
+  
+  "CANSSI Ontario Stats. Software Conf.", "Nov 2022", "virtual", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-canssi2022.netlify.app/",
   
   "UseR 2022", "Jun 2022", "Virtual", "Cubble: An R package for organizing and wrangling multivariate spatio-temporal data", "https://sherryzhang-user2022.netlify.app/",
   
