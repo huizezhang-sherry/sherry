@@ -50,18 +50,18 @@ bibliography_entries(here::here("cv/pub.bib"))
 
 ```{r conf}
 tribble(
-  ~ conf, ~ date, ~ where, ~ topic, ~ link,
+  ~ conf, ~ date, ~ where, ~ topic, ~ link, ~content,
   
-  "ECSS Mini Conf. 2022", "Nov 2022", "virtual", "(upcoming) Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-ecssmini2022.netlify.app/",
+  "ECSS Miniconference \\newline \\textcolor{white}{Nov 2022}", "Nov 2022 \\textcolor{white}{Nov 2022}", "virtual", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-ecssmini2022.netlify.app/", "\\newline People's Choice Award",
   
-  "CANSSI Ontario Stats. Software Conf.", "Nov 2022", "virtual", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-canssi2022.netlify.app/",
+  "CANSSI Ontario Stats. Software Conf.", "Nov 2022", "virtual", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-canssi2022.netlify.app/", "",
   
-  "UseR 2022", "Jun 2022", "Virtual", "Cubble: An R package for organizing and wrangling multivariate spatio-temporal data", "https://sherryzhang-user2022.netlify.app/",
+  "UseR!", "Jun 2022", "Virtual", "Cubble: An R package for organizing and wrangling multivariate spatio-temporal data", "https://sherryzhang-user2022.netlify.app/", "",
   
-  "UseR 2021", "Jul 2021", "Virtual", "Visual diagnostics for constrained optimisation with application to guided tours", "https://sherryzhang-user2021.netlify.app/",
+  "UseR!", "Jul 2021", "Virtual", "Visual diagnostics for constrained optimisation with application to guided tours", "https://sherryzhang-user2021.netlify.app/", "",
   
-  "Young Stats. Conf. 2019", "Oct 2019", "Canberra, Australia", "Exploration of judicial facial expression in videos of legal proceedings", "               ") %>%
-  brief_entries(what = glue::glue("<topic>\\newline \\url{<link>}", .open = "<", .close = ">"), when = paste0(date, "\\newline"), with = paste0(conf, "\\newline"), .protect = FALSE)
+  "Young Stats. Conf.", "Oct 2019", "Canberra, Australia", "Exploration of judicial facial expression in videos of legal proceedings", "               ", "") %>%
+  brief_entries(what = glue::glue("<topic>\\newline \\url{<link>} \\em{<content>}", .open = "<", .close = ">"), when = paste0(date, "\\newline"), with = paste0(conf, "\\newline"), .protect = FALSE)
 ```
 
 # Teaching
@@ -88,7 +88,7 @@ tribble(
 ```{r workshop}
 tribble(
   ~ conf, ~ date, ~ where, ~ topic, ~ link,
-  "WOMBAT 2022", "Dec 2022", "aaa", "(upcoming) Wrangling spatio-temporal data with R", "https://numbats.github.io/WOMBAT2022/tutorial/sherry.html",
+  "WOMBAT", "Dec 2022", "aaa", "(upcoming) Wrangling spatio-temporal data with R", "https://numbats.github.io/WOMBAT2022/tutorial/sherry.html",
   
   "R Ladies Melbourne", "Sept 2022", "onsite", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-rladiesmelb2022.netlify.app/") %>%
   brief_entries(what = glue::glue("<topic>\\newline \\url{<link>}", .open = "<", .close = ">"), when = paste0(date, "\\newline"), with = paste0(conf, "\\newline"), .protect = FALSE)
@@ -115,10 +115,11 @@ tribble(
 ```{r}
 tribble(
   ~ grants, ~ dates, ~ where,
-  "CSIRO Data61 Postgraduate Research Scholarship ", "20 - 23", "CSIRO",
-  "Monash Business School Co-Funded Graduate Research Scholarship ", " 20 - 23", "Monash University",
-  "Dean's Honours List", "2020", "Monash University",
-  "Monash Summer Vacation Research Scholarship", "2019", "Monash University") %>% 
+  "People's Choice Award for the presentation in ECSS Miniconference", "2022", "Statistical Society of Australia et al.",
+  "Postgraduate (PhD) Research Scholarship ", "20 - 23", "CSIRO Data61",
+  "Co-Funded Graduate Research Scholarship ", " 20 - 23", "Monash Business School",
+  "Dean's Honours List", "2020", "Monash Business School",
+  "Summer Vacation Research Scholarship", "2019", "Monash University") %>% 
   brief_entries(glue::glue("<grants>", .open = "<", .close = ">"), dates, where)
 ```
 
