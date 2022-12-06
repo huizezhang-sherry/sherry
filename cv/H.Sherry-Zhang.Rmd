@@ -75,8 +75,6 @@ tribble(
   "on wrangling open data into analysis ready shape through case study on US air traffic data, Australia census and election data, and among others", "https://wcd.numbat.space/",
   "Monash University",  "Sem 2 \\newline 20 \\& 21", "ETC5521 Exploratory Data Analysis", 
   "on independently raising interesting research questions from data and conduct exploratory data analysis to answer these questions", "https://eda.numbat.space/",
-  "Uni. of Washington",  "Jul 20", "Summer Institute in Statistics for Big Data (SISBID)",
-  "on building static graphics with ggplot2 and interactive graphics include but not limited to plotly, gganimate, and tourr", "https://github.com/dicook/SISBID",
   "Monash University", "Sem 1 20 \\newline Sem 2 19 ", "ETC1010/ETC5510 Introduction to Data Analysis",
   "on introducing tidyverse tools for data wrangling \\& visualising and basics in web scraping, text analysis and programming with R", "https://ida.numbat.space/"
 ) %>% 
@@ -88,10 +86,10 @@ tribble(
 ```{r workshop}
 tribble(
   ~ conf, ~ date, ~ where, ~ topic, ~ link,
-  "WOMBAT", "Dec 2022", "aaa", "(upcoming) Wrangling spatio-temporal data with R", "https://numbats.github.io/WOMBAT2022/tutorial/sherry.html",
+  "WOMBAT", "Dec 2022", "aaa", "Wrangling spatio-temporal data with R", "https://sptm-tidy.numbat.space/",
   
-  "R Ladies Melbourne", "Sept 2022", "onsite", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-rladiesmelb2022.netlify.app/") %>%
-  brief_entries(what = glue::glue("<topic>\\newline \\url{<link>}", .open = "<", .close = ">"), when = paste0(date, "\\newline"), with = paste0(conf, "\\newline"), .protect = FALSE)
+  "R Ladies Melbourne \\newline", "Sept 2022 \\newline", "onsite", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-rladiesmelb2022.netlify.app/") %>%
+  brief_entries(what = glue::glue("\\strong{<topic>}\\space\\url{<link>}", .open = "<", .close = ">"), when = paste0(date), with = conf, .protect = FALSE)
 ```
 
 # Software
