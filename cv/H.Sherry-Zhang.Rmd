@@ -51,6 +51,7 @@ bibliography_entries(here::here("cv/pub.bib"))
 ```{r conf}
 tribble(
   ~ conf, ~ date, ~ where, ~ topic, ~ link, ~content,
+  "The Aus. Spatial Econ. \\& Stat. workshop \\newline \\textcolor{white}{Feb 2023}", "Feb 2023 \\textcolor{white}{Feb 2023}", "onsite", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-monashspatial2023.netlify.app/", "\\newline targeted audience in econometrics and statistics",
   
   "ECSS Miniconference \\newline \\textcolor{white}{Nov 2022}", "Nov 2022 \\textcolor{white}{Nov 2022}", "virtual", "Switching between space and time: Spatio-temporal analysis with cubble", "https://sherryzhang-ecssmini2022.netlify.app/", "\\newline People's Choice Award",
   
