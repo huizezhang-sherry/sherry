@@ -24,6 +24,8 @@ tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where, ~ details,
   
   "Doctor of Philosophy", "Feb 2020 - Aug 2023", "Monash University", "Melbourne, Australia","Supervisors: Dianne Cook, Patricia Menéndez, Nicolas Langrené (BNU-HKBU United International College), and Ursula Laa (BOKU)",
+  "Doctor of Philosophy", "Feb 2020 - Aug 2023", "Monash University", "Melbourne, Australia","Thesis title: New tools for visualising and explaining multivariate spatio-temporal data",
+  
   
   
   "Bachelor of Commerce (Honours)", "Feb 2016 - Dec 2019", "Monash University", "Melbourne, Australia", "First Class Honours (H1)",
