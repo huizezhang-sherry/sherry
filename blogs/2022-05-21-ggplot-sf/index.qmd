@@ -3,7 +3,7 @@ title: "How long do maps on ggplot facets take?"
 author: "H. Sherry Zhang"
 date: '2022-05-21'
 slug: []
-categories: []
+categories: [data visualization, spatial data]
 tags: []
 subtitle: ''
 summary: ''
@@ -12,6 +12,7 @@ lastmod: '2022-05-21T22:49:21+10:00'
 featured: no
 projects: []
 freeze: true
+image: feature.png
 ---
 
 ```{r setup, include=FALSE}

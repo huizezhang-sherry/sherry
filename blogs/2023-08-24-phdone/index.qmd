@@ -1,0 +1,31 @@
+---
+title: "PhDone"
+author: "H. Sherry Zhang"
+date: '2023-08-24'
+slug: []
+categories: [PhD]
+tags: []
+summary: ''
+authors: []
+featured: no
+projects: []
+freeze: true
+title-block-style: none
+image: wordle.png
+---
+
+Today, I submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research: 
+
+  1) designing diagnostic plots for projection pursuit optimisation, applied to guided **tour**, 
+  2) developing a spatio-temporal data structure in R and using **glyph** maps to visualise the data, and 
+  3) proposing a data pipeline approach under the tidy framework to construct **indexes**.
+
+Surprisingly (and hopefully), the last two words turned out to be actual  Wordle solutions: "glyph” on 18th November 2022, and “index” on 15th August 2023 - just a few days before the submission deadline! Realising today's Wordle solution is what I've been working on daily feels like stumbling upon the crossword clue “corolla leaf" `r set.seed(123); emo::ji("flower")`, or in a more recent analogy, spotting the Adélie penguins in the Sea Life `r emo::ji("penguin")`. 
+
+To see what I have been working on for the past 3.5 years, you can check out my thesis at <https://sherryzhang-thesis.netlify.app/>
+
+
+```{r echo = FALSE, fig.align='center'}
+#| out-height: 20%
+knitr::include_graphics("wordle.png")
+```

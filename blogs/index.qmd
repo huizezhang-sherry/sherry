@@ -3,7 +3,8 @@ listing:
   contents: .
   sort: "date desc"
   type: default
-  categories: cloud
+  categories: numbered
+  max-description-length: 100
 page-layout: full
 comments: false
 language:

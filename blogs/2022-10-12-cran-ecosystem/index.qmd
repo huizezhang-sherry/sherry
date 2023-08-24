@@ -3,7 +3,7 @@ title: 'Diving into dependen-"sea"'
 author: "H. Sherry Zhang"
 date: '2022-10-18'
 slug: []
-categories: []
+categories: [software development, CRAN]
 tags: []
 subtitle: "How CRAN packages are interconnected"
 summary: ''
@@ -13,6 +13,7 @@ featured: no
 projects: []
 freeze: true
 title-block-style: none
+image: network.png
 ---
 
 ```{r setup, include=FALSE}
