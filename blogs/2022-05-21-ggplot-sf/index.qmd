@@ -1,5 +1,6 @@
 ---
 title: "How long do maps on ggplot facets take?"
+description: "When creating time-faceted maps in ggplot2, you might notice that things start to slow down as more time periods are added..."
 author: "H. Sherry Zhang"
 date: '2022-05-21'
 slug: []

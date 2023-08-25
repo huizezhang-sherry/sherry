@@ -8,6 +8,7 @@
 
 <meta name="author" content="H. Sherry Zhang">
 <meta name="dcterms.date" content="2022-05-21">
+<meta name="description" content="When creating time-faceted maps in ggplot2, you might notice that things start to slow down as more time periods are added…">
 
 <title>H. Sherry Zhang - How long do maps on ggplot facets take?</title>
 <style>
@@ -125,10 +126,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 
 
-<link rel="stylesheet" href="styles.scss">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -145,10 +145,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">H. Sherry Zhang</a>
+    <a class="nav-link" href="../../index.html">About</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blogs/index.html">Blog</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/huizezhang-sherry"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/huizezhangsh"><i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+ </a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -160,17 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#lets-reveal-the-answer" id="toc-lets-reveal-the-answer" class="nav-link active" data-scroll-target="#lets-reveal-the-answer">Let’s reveal the answer</a></li>
-  <li><a href="#how-come-it-takes-that-long" id="toc-how-come-it-takes-that-long" class="nav-link" data-scroll-target="#how-come-it-takes-that-long">How come it takes that long?</a></li>
-  <li><a href="#back-to-the-initial-problem" id="toc-back-to-the-initial-problem" class="nav-link" data-scroll-target="#back-to-the-initial-problem">Back to the initial problem</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -179,6 +181,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">How long do maps on ggplot facets take?</h1>
 </div>
 
+<div>
+  <div class="description">
+    When creating time-faceted maps in ggplot2, you might notice that things start to slow down as more time periods are added…
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">

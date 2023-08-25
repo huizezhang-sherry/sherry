@@ -4,8 +4,8 @@ listing:
   sort: "date desc"
   type: default
   categories: numbered
-  max-description-length: 100
 page-layout: full
+max-description-length: 100
 comments: false
 language:
   listing-page-field-categories: "Topics"

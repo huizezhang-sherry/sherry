@@ -1,5 +1,6 @@
 ---
 title: 'Diving into dependen-"sea"'
+description: " As one of the recipients of the isoband email, I'm curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…"
 author: "H. Sherry Zhang"
 date: '2022-10-18'
 slug: []

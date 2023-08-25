@@ -19,4 +19,10 @@ about:
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I'm Sherry, a final year PhD student at Monash University supervised by [Di Cook](http://dicook.org/), [Patricia Menéndez](https://research.monash.edu/en/persons/patricia-menendez-galvan), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://staff.uic.edu.cn/nicolaslangrene/en). My research provides data wrangling and visualisation tools for analysing multivariate spatio-temporal data. One of my projects, [ferrn](https://github.com/huizezhang-sherry/ferrn), focuses on creating diagnostic plots to understand the optimisers in projection pursuit, a multivariate dimension reduction method. I have also been working on a spatio-temporal data class, [cubble](https://github.com/huizezhang-sherry/cubble) (cubical-tibble), to help with data wrangling and making glyph maps.
+I am a final year PhD candidate at Monash University. My research provides data wrangling and visualisation tools for analysing multivariate spatio-temporal data. In 2024, I will join the Department of Statistics and Data Sciences at University of Texas, Austin as a postdoctoral research fellow.
+
+<!--# supervised by Di Cook, Patricia Menéndez, Ursula Laa, and Nicolas Langrené.  -->
+
+<!-- One of my projects, [ferrn](https://github.com/huizezhang-sherry/ferrn), focuses on creating diagnostic plots to understand the optimisers in projection pursuit, a multivariate dimension reduction method. I have also been working on a spatio-temporal data class, [cubble](https://github.com/huizezhang-sherry/cubble) (cubical-tibble), to help with data wrangling and making glyph maps. -->
+
+<img src="https://ghchart.rshah.org/huizezhang-sherry" alt="Sherry Zhang&apos;s Github chart"/>
