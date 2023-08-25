@@ -1,0 +1,82 @@
+---
+page-layout: full
+margin: 0
+comments: false
+language:
+  listing-page-field-categories: "Topics"
+freeze: true
+---
+
+<!-- ## A Tidy Framework and Infrastructure to Systematically Assemble Spatio-temporal Indexes from Multivariate Data [{{< fa file-pdf >}}](https://github.com/huizezhang-sherry/paper-tidyindex) [{{< fa brands github >}}](https://github.com/huizezhang-sherry/tidyindex) -->
+
+<!-- Indexes are useful for summarizing multivariate information into single metrics for monitoring, communicating, and decision-making. (examples). I developed a modular data pipeline recommendation to assemble indexes. This allows to compute indexes with different parameter choices, adjust steps in the index definition by adding, removing, and swapping them to experiment with various index designs, calculate uncertainty measures, and assess indexes' robustness. -->
+
+<!-- ::: column-margin -->
+
+<!-- ```{r echo = FALSE} -->
+
+<!-- knitr::include_graphics("idx-tour.gif") -->
+
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ```{r echo = FALSE} -->
+
+<!-- #| out-width: 100% -->
+
+<!-- knitr::include_graphics("pipeline-steps.png") -->
+
+<!-- ``` -->
+
+<!-- Examples on calculating the confidence interval on the drought index Standardised Precipitation Index (SPI). -->
+
+<!-- ```{r echo = FALSE} -->
+
+<!-- #| out-width: 100% -->
+
+<!-- knitr::include_graphics("spi-uncertainty.png") -->
+
+<!-- ``` -->
+
+<!-- ::: column-body -->
+<!-- ## cubble: An R Package for Organizing and Wrangling Multivariate Spatio-temporal Data [{{< fa file-pdf >}}](https://arxiv.org/abs/2205.00259v2) [{{< fa brands github >}}](https://github.com/huizezhang-sherry/cubble) -->
+
+<!-- ```{r echo = FALSE} -->
+<!-- knitr::include_graphics("cubble.png") -->
+<!-- ``` -->
+
+<!-- Talks: -->
+
+<!-- -   *Switching between space and time: Spatio-temporal analysis with cubble* -->
+
+<!--     -   **customised glyphmap with German weather stations** Institute for Geoinformatics, University of Münster, Germany May 2023 [{{< fa download >}}](https://sherryzhang-germany2023.netlify.app) -->
+<!--     -   **customised glyphmap with Austria weather stations** R Ladies Vienna, Austria Apr 2023 [{{< fa download >}}](https://sherryzhang-rladiesvienna2023.netlify.app) -->
+<!--     -   **combined with visual diagnostic** Department of Mathematics and Statistics, Maynooth University, Ireland Apr 2023 [{{< fa download >}}](https://sherryzhang-ireland2023.netlify.app/) -->
+<!--     -   **targeted audience in econometrics and statistics** The Australian spatial econometrics and statistics workshop, Melbourne, Australia Feb 2023 [{{< fa download >}}](https://sherryzhang-monashspatial2023.netlify.app/) -->
+<!--     -   **People's Choice Award** ECSS Miniconference, virtue Nov 2022 [{{< fa download >}}](https://sherryzhang-ecssmini2022.netlify.app/) -->
+<!--     -   **invited talk** CANSSI Ontario Statistical Software Conference, virtue Nov 2022 [{{< fa download >}}](https://sherryzhang-canssi2022.netlify.app/) -->
+<!--     -   **workshop style with exercises (spatial, temporal, and spatio-temporal data, cubble, and glyph map)** R Ladies Melbourne, Australia Oct 2022 [{{< fa download >}}](https://sherryzhang-rladiesmelb2022.netlify.app) -->
+
+<!-- -   *Cubble: An R package for organizing and wrangling multivariate spatio-temporal data* UseR! 2022 Jun 2022 [{{< fa download >}}](https://sherryzhang-user2022.netlify.app/) -->
+<!-- ::: -->
+
+## Visual Diagnostics for Constrained Optimisation with Application to Guided Tours [{{< fa file-pdf >}}](https://journal.r-project.org/articles/RJ-2021-105/) [{{< fa brands github >}}](https://github.com/huizezhang-sherry/ferrn)
+
+Projection pursuit is a technique used to find interesting low-dimensional linear projections of high dimension data by optimising an index function on projection matrices. I don't expect what I just said to fully make sense to you, so let's instead think about cutting double yolk mooncake:
+
+```{r echo = FALSE}
+knitr::include_graphics("projection-pursuit.png")
+```
+
+I hope you can see that the index function can become quiet complex if the data dimension increases. In fact, the index function could be non-linear, computationally expensive to calculate the gradient, and may have local optima, which are also interesting for projection pursuit to explore. This work has designed four diagnostic plots to visualise the optimisation routine in projection pursuit, and @fig-diag-plot is one of them, plotting two optimisation paths in a 5D unit sphere space.
+
+::: column-margin
+```{r fig-diag-plot, echo = FALSE}
+#| fig-cap: "Search paths of a random search and a pseudo derivative optimiser animated in the basis space of a 5D unit sphere."
+knitr::include_graphics("tour.gif")
+```
+:::
+
+
+Talk: *Visual diagnostics for constrained optimisation with application to guided tours*: UseR! 2021 July 2021 [{{< fa download >}}](https://sherryzhang-user2021.netlify.app/)
