@@ -1,0 +1,66 @@
+---
+title: "Pinyin"
+description: "It is likely that you may need to interact with colleagues or students from China, for whom you will need to pronounce their names, even if it is just the surname."
+author: "H. Sherry Zhang"
+date: '2023-09-12'
+slug: []
+reading-time: true
+categories: [Pinyin]
+tags: []
+summary: ''
+authors: []
+featured: no
+projects: []
+freeze: true
+title-block-style: none
+image: names.png
+---
+
+No one wants to correct others. However, it is likely that you may need to interact with colleagues or students from China, for whom you will need to pronounce their names, even if it is just the surname. This post is not aiming to provide a comprehensive or official explanation of the Pinyin system, but a 5 mins quick guide on how the system functions and helps you with pronouncing one or two characters well enough to impress your colleagues/ students. Of course, we will not delve into tone, which is another 50 hours of work to master. It is worth noting that we will focus on the Pinyin system used in mainland China and the system used in other regions, such as Hong Kong, Taiwan, and Macau, may have slight variations. You may recognise the same word is represented differently, for example, the surname 张, is **Zhang** in Pinyin but *Chang* in the Wade–Giles (WG) system. 
+
+## How Pinyin is used to represent words
+
+Chinese differs from English that it doesn’t concatenate alphabets into words. Instead, there is a fixed set of consonant sounds (also called *initials*) and another set of vowel sounds (also called *finals*), which are combined into a finite set of pronunciations for all the Chinese characters. To encode all the possible characters into this set of pronunciations using Pinyin, you can expect different characters to share the same Pinyin and have the same sound. For example, the following three characters all have the Pinyin **fá**:   罚-punish，伐-logging (a tree)，乏-tired. 
+
+## Given name split
+
+Unlike English ones, a Chinese given name usually consists of two characters. We don't have the concept of a middle name, and it is not standard to treat the second character in the given name as the middle name. Hence, the two characters are often combined into a single word in the given name. <u>Recognising where to split the given name increases your chance of sounding correct. </u> For example, you can try my name **Zhang Huize** (张慧泽) and again if you know it should be split into **Zhang Hui Ze**. This split is usually obvious since a single character in Pinyin comprises a consonant and a vowel (with limited cases of no consonant) and the consonant and the vowels set do not overlap: 
+
+|Type| Pinyin|
+|---| -----------------|
+| Consonants | b, p, m, f, d, t, n, l, g, k, h, j, q, x, z, c, s, zh, ch, sh, r, y, w |
+| Vowels | a, o, e, i, u, ü, <br /> ai, ei, ui, ao, ou, iu, ie, üe, er, an, en, in, un, ang, eng, ing, ong <br /> ia, iao, ian, iang, iong, ua, uo, uai, uang  |
+
+All the vowels start with an English vowel (a,e,i,o,u) and end with another vowel, or an "n", or a "g". Here are more examples of the split: 
+
+- **Su Buqing** - **Su Bu Qing** | [苏步青](https://en.wikipedia.org/wiki/Su_Buqing) (1902-2003) mathematician, served as the president of Fudan University,
+- **Wu Jianxiong** - **Wu Jian Xiong** (also *Wu Chien-Shiung* in the WG system) | [吴健雄](https://en.wikipedia.org/wiki/Chien-Shiung_Wu) (1912-1997)  particle and experimental physicist, the Wu experiment resulted in her colleagues winning the 1957 Nobel Prize in Physics, and
+- **Zhang Ailing** - **Zhang Ai Ling** (also *Chang Ai-ling* in the WG system) | [张爱铃](https://en.wikipedia.org/wiki/Eileen_Chang) (1920-1995) writer, notable work: [Love in a fallen city](https://en.wikipedia.org/wiki/Love_in_a_Fallen_City_(novella)).
+
+## Now let’s talk about pronunciation
+
+If you read Pinyin as if it were English, it is likely that you have already got many under the belt, e.g. bai (as "bye") and tan (similar to "tangent" but without the "gent"). Here, we will highlight the most commonly mispronounced consonants and vowels, and you can find the audio for all the combinations on  [this website](https://chinese.yabla.com/chinese-pinyin-chart.php). 
+
+### Consonants
+
+- **zh, ch, sh**: <u>The letter **h** is not silent in pinyin! </u> Unlike the versions without h (**z, c, s**), where you upper teeth almost touch the lower ones, for **zh, ch,** and **sh**, you will form your lips in to a “less than” (<) shape. This will produce a sound similar to the "j" in English for **zh**, the "ch" sound in "cheese" for **ch**, and the "sh" sound in "shape" for **sh**. The Pinyin **j** sounds like "Jeep" without the p sound.
+- **q, x**: <u>These are the two hardest, and essentially, there is no equivalence in English</u>. The International Phonetic alphabet (IPA) that provides the guidance on the mouth position for pronouncing these sounds. But if you only have 5 minutes to master the pronunciation, the most efficient way would likely to be listening to the audio of the specific sound multiple times: <https://chinese.yabla.com/chinese-pinyin-chart.php>
+
+### Vowels
+
+- **ang, eng, ing, ong**: <u>The letter **g** is also not silent in pinyin!</u>  Distinguishing between **eng/ing/ong** might be less crucial since "on" is not a recognised vowel and some native speakers (I'm looking at you shanghainese) may struggle to differentiate between the en/eng and in/ing combinations. The **ang**, and its version without g, **an**, sound completely different: <u>**ang** sounds like "on" in English and **an** sounds more like the "an" part in "answer". </u>
+- **ia, iao, ian, iang, iong, ua, uo, uai, uang**: Think of this category as blending the **i/u** sound (**i** as in "ee" and **u** as in "w") into the next vowel. For example, **ia** as in "via" and **uai** as in "white" without the t sound.
+
+## Your turn
+
+Here we have the most common 10 surnames for you to try out: 
+
+ > Wang, Li, Zhang, Liu, Chen, Yang, Zhao, Huang, Zhao, Wu, Zhou
+
+and a platter of given names:
+
+ > Chao, Guo, Han, Hao, Hong, Hua, Jia, Jie, Jing, Jun, Lan, Lei, Ming, Ping, Shi, Ting, Wei, Xin, Xuan, Yan, Yi, Ying, Yu, Zi
+
+Listen [here](https://chinese.yabla.com/chinese-pinyin-chart.php) if you are not sure about anyone.
+
+One trivia on Chinese names is that the most common name in China is *Zhang Wei, 张伟,* which is shared over 3 million people! 🤯
