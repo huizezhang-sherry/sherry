@@ -3,19 +3,25 @@
 // use sandstone as the base
 // $theme: "sandstone" !default;
 
-@import url('https://fonts.googleapis.com/css2?family=Laila:wght@500;600&family=Open+Sans:wght@500&family=Spectral&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Nunito:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,600;0,700;0,800;1,700&display=swap');
 
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-family-sans-serif2: 'Karla', sans-serif;
 
-p, ul, ol {
-  font-family: $font-family-sans-serif2;
+$font-header: 'Montserrat Alternates', sans-serif;
+$font-body: 'EB Garamond', sans-serif;
+
+p, ul, ol, .menu-text {
+  font-family: $font-body;
+  font-size: 20px;
+  line-height: normal;
+  text-transform: none !important; 
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: $font-family-sans-serif;
+
+h1, h2, h3, h4, h5, figcaption, .navbar-title {
+  font-family: $font-header;
+  font-size: 20px;
+  text-transform: none;
 }
 

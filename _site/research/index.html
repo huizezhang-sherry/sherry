@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -117,70 +151,86 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full column-page-left" id="quarto-document-content">
+<main class="content page-columns page-full column-page" id="quarto-document-content">
 
 
 
-<!-- ## A Tidy Framework and Infrastructure to Systematically Assemble Spatio-temporal Indexes from Multivariate Data [](https://github.com/huizezhang-sherry/paper-tidyindex) [](https://github.com/huizezhang-sherry/tidyindex) -->
-<!-- Indexes are useful for summarizing multivariate information into single metrics for monitoring, communicating, and decision-making. (examples). I developed a modular data pipeline recommendation to assemble indexes. This allows to compute indexes with different parameter choices, adjust steps in the index definition by adding, removing, and swapping them to experiment with various index designs, calculate uncertainty measures, and assess indexes' robustness. -->
-<!-- ::: column-margin -->
-<!-- ```{r echo = FALSE} -->
-<!-- knitr::include_graphics("idx-tour.gif") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ```{r echo = FALSE} -->
-<!-- #| out-width: 100% -->
-<!-- knitr::include_graphics("pipeline-steps.png") -->
-<!-- ``` -->
-<!-- Examples on calculating the confidence interval on the drought index Standardised Precipitation Index (SPI). -->
-<!-- ```{r echo = FALSE} -->
-<!-- #| out-width: 100% -->
-<!-- knitr::include_graphics("spi-uncertainty.png") -->
-<!-- ``` -->
-<!-- ::: column-body -->
-<!-- ## cubble: An R Package for Organizing and Wrangling Multivariate Spatio-temporal Data [](https://arxiv.org/abs/2205.00259v2) [](https://github.com/huizezhang-sherry/cubble) -->
-<!-- ```{r echo = FALSE} -->
-<!-- knitr::include_graphics("cubble.png") -->
-<!-- ``` -->
-<!-- Talks: -->
-<!-- -   *Switching between space and time: Spatio-temporal analysis with cubble* -->
-<!--     -   **customised glyphmap with German weather stations** Institute for Geoinformatics, University of Münster, Germany May 2023 [](https://sherryzhang-germany2023.netlify.app) -->
-<!--     -   **customised glyphmap with Austria weather stations** R Ladies Vienna, Austria Apr 2023 [](https://sherryzhang-rladiesvienna2023.netlify.app) -->
-<!--     -   **combined with visual diagnostic** Department of Mathematics and Statistics, Maynooth University, Ireland Apr 2023 [](https://sherryzhang-ireland2023.netlify.app/) -->
-<!--     -   **targeted audience in econometrics and statistics** The Australian spatial econometrics and statistics workshop, Melbourne, Australia Feb 2023 [](https://sherryzhang-monashspatial2023.netlify.app/) -->
-<!--     -   **People's Choice Award** ECSS Miniconference, virtue Nov 2022 [](https://sherryzhang-ecssmini2022.netlify.app/) -->
-<!--     -   **invited talk** CANSSI Ontario Statistical Software Conference, virtue Nov 2022 [](https://sherryzhang-canssi2022.netlify.app/) -->
-<!--     -   **workshop style with exercises (spatial, temporal, and spatio-temporal data, cubble, and glyph map)** R Ladies Melbourne, Australia Oct 2022 [](https://sherryzhang-rladiesmelb2022.netlify.app) -->
-<!-- -   *Cubble: An R package for organizing and wrangling multivariate spatio-temporal data* UseR! 2022 Jun 2022 [](https://sherryzhang-user2022.netlify.app/) -->
-<!-- ::: -->
-<section id="visual-diagnostics-for-constrained-optimisation-with-application-to-guided-tours-fa-file-pdf-fa-brands-github" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="visual-diagnostics-for-constrained-optimisation-with-application-to-guided-tours-fa-file-pdf-fa-brands-github">Visual Diagnostics for Constrained Optimisation with Application to Guided Tours <a href="https://journal.r-project.org/articles/RJ-2021-105/"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/ferrn"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h2>
-<p>Projection pursuit is a technique used to find interesting low-dimensional linear projections of high dimension data by optimising an index function on projection matrices. I don’t expect what I just said to fully make sense to you, so let’s instead think about cutting double yolk mooncake:</p>
+<div class="column-body">
+<section id="a-tidy-framework-and-infrastructure-to-systematically-assemble-spatio-temporal-indexes-from-multivariate-data-fa-file-pdf-fa-brands-github" class="level2">
+<h2 class="anchored" data-anchor-id="a-tidy-framework-and-infrastructure-to-systematically-assemble-spatio-temporal-indexes-from-multivariate-data-fa-file-pdf-fa-brands-github">A tidy framework and infrastructure to systematically assemble spatio-temporal indexes from multivariate data <a href="https://github.com/huizezhang-sherry/paper-tidyindex"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/tidyindex"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h2>
+<p>Indexes are useful for summarising multivariate information into a single metric for monitoring, communicating, and decision-making. While most work has focused on defining new indexes for specific purposes, most indexes are not designed and implemented in a way that makes it easy to understand index behavior in different data conditions, and to determine how their structure affects their values and variation in values. I developed a modular data pipeline recommendation to assemble indexes, and it allows investigation of index behavior as part of the development procedure. One can compute indexes with different parameter choices, adjust steps in the index definition by adding, removing, and swapping them to experiment with various index designs, calculate uncertainty measures, and assess indexes’ robustness. <a href="#fig-idx-tour">Figure&nbsp;1</a> shows the Global Gender Gap Index, comprised of four dimensions (economy, education, health, and politics) in a linear combination with equal weights of 0.25. The tour animation shows how the index value and country ranking changes as the weight asigned to the politics dimension changes.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="projection-pursuit.png" class="img-fluid" width="1250"></p>
+<div id="fig-idx-tour" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="idx-tour.gif" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Exploring the sensitivity of the Global Gender Gap Index (GGGI), by varying the politics component’s contribution. Bangladesh’s GGGI increases substantially when politics gains more weights, indicating that this component plays a large role in it’s relatively high value. Also, politics plays a substantial role in the GGGI’s for the top ranked countries, because each of them drops, to the state of being similar to the middle ranked countries when the politics component’s contribution is reduced.</figcaption>
+</figure>
 </div>
 </div>
-<p>I hope you can see that the index function can become quiet complex if the data dimension increases. In fact, the index function could be non-linear, computationally expensive to calculate the gradient, and may have local optima, which are also interesting for projection pursuit to explore. This work has designed four diagnostic plots to visualise the optimisation routine in projection pursuit, and <a href="#fig-diag-plot">Figure&nbsp;1</a> is one of them, plotting two optimisation paths in a 5D unit sphere space.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
+</div>
+</section>
+<section id="cubble-an-r-package-for-organizing-and-wrangling-multivariate-spatio-temporal-data-fa-file-pdf-fa-brands-github" class="level2">
+<h2 class="anchored" data-anchor-id="cubble-an-r-package-for-organizing-and-wrangling-multivariate-spatio-temporal-data-fa-file-pdf-fa-brands-github">cubble: An R Package for Organizing and Wrangling Multivariate Spatio-temporal Data <a href="https://arxiv.org/abs/2205.00259v2"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/cubble"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h2>
+<p>For many analyses, spatial and time components can be separately studied: for example, to explore the temporal trend of one variable for a single spatial location, or to model the spatial distribution of one variable at a given time. However for others, it is important to analyze different aspects of the spatio-temporal data simultaneously, for instance, temporal trends of multiple variables across locations. In order to facilitate the study of different portions or combinations of spatio-temporal data, we introduce a new class, cubble, with a suite of functions enabling easy slicing and dicing on different spatio-temporal components. <a href="#fig-glyphmap">Figure&nbsp;2</a> is created by analysing the daily maximum temperature data form Global Historical Climatology Network (GHCN) across stations in two Australia states, using the cubble data structure and the glyph maps are created using the <code>geom_glyph()</code> function, also implemented in the cubble package, as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tmax <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x_major =</span> long, <span class="at">x_minor =</span> month, <span class="at">y_major =</span> lat, <span class="at">y_minor =</span> tmax, ...)) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(..., <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_glyph_box</span>(...) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_glyph</span>(...) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-glyphmap" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="glyphmap.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Glyph maps comparing temperature change between 1971-1975 and 2016-2020 for 54 stations in Victoria and New South Wales, Australia. Overlaid line plots show monthly temperature (a) where a hint of late summer warming can be seen. Transforming to temperature differences (c) shows pronounced changes between the two periods. The horizontal guideline marks zero difference. One station, Cobar, is highlighted in the glyph maps and shown separately (b, d). Here the late summer (Jan-Feb) warming pattern, which is more prevalent at inland locations, is clear.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Talks:</p>
+<ul>
+<li><p><strong>Switching between space and time: Spatio-temporal analysis with cubble</strong></p>
+<ul>
+<li><strong>customised glyphmap with German weather stations</strong> Institute for Geoinformatics, University of Münster, Germany May 2023 <a href="https://sherryzhang-germany2023.netlify.app"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+<li><strong>customised glyphmap with Austria weather stations</strong> R Ladies Vienna, Austria Apr 2023 <a href="https://sherryzhang-rladiesvienna2023.netlify.app"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+<li><strong>combined with visual diagnostic</strong> Department of Mathematics and Statistics, Maynooth University, Ireland Apr 2023 <a href="https://sherryzhang-ireland2023.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+<li><strong>targeted audience in econometrics and statistics</strong> The Australian spatial econometrics and statistics workshop, Melbourne, Australia Feb 2023 <a href="https://sherryzhang-monashspatial2023.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+<li><strong>People’s Choice Award</strong> ECSS Miniconference, virtue Nov 2022 <a href="https://sherryzhang-ecssmini2022.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+<li><strong>invited talk</strong> CANSSI Ontario Statistical Software Conference, virtue Nov 2022 <a href="https://sherryzhang-canssi2022.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+<li><strong>workshop style with exercises (spatial, temporal, and spatio-temporal data, cubble, and glyph map)</strong> R Ladies Melbourne, Australia Oct 2022 <a href="https://sherryzhang-rladiesmelb2022.netlify.app"><i class="fa-solid fa-download" aria-hidden="true"></i></a></li>
+</ul></li>
+<li><p><strong>Cubble: An R package for organizing and wrangling multivariate spatio-temporal data</strong> UseR! 2022 Jun 2022 <a href="https://sherryzhang-user2022.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></p></li>
+</ul>
+</section>
+<section id="visual-diagnostics-for-constrained-optimisation-with-application-to-guided-tours-fa-file-pdf-fa-brands-github" class="level2">
+<h2 class="anchored" data-anchor-id="visual-diagnostics-for-constrained-optimisation-with-application-to-guided-tours-fa-file-pdf-fa-brands-github">Visual Diagnostics for Constrained Optimisation with Application to Guided Tours <a href="https://journal.r-project.org/articles/RJ-2021-105/"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/ferrn"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h2>
+<p>Projection pursuit is a technique used to find interesting low-dimensional linear projections of high dimension data by optimising an index function on projection matrices. The index function could be non-linear, computationally expensive to calculate the gradient, and may have local optima, which are also interesting for projection pursuit to explore. This work has designed four diagnostic plots to visualise the optimisation routine in projection pursuit, and <a href="#fig-diag-plot">Figure&nbsp;3</a> is one of them, plotting two optimisation paths in a 5D unit sphere space.</p>
+<p>Talk: <strong>Visual diagnostics for constrained optimisation with application to guided tours</strong>: UseR! 2021 July 2021 <a href="https://sherryzhang-user2021.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></p>
+<!-- I don't expect what I just said to fully make sense to you, so let's instead think about cutting double yolk mooncake: -->
+<!-- ```{r echo = FALSE} -->
+<!-- knitr::include_graphics("projection-pursuit.png") -->
+<!-- ``` -->
+<!-- I hope you can see that the index function can become quiet complex if the data dimension increases. In fact, t -->
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-diag-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="tour.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Search paths of a random search and a pseudo derivative optimiser animated in the basis space of a 5D unit sphere.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3: Search paths of a random search and a pseudo derivative optimiser animated in the basis space of a 5D unit sphere.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</div></div><p>Talk: <em>Visual diagnostics for constrained optimisation with application to guided tours</em>: UseR! 2021 July 2021 <a href="https://sherryzhang-user2021.netlify.app/"><i class="fa-solid fa-download" aria-hidden="true"></i></a></p>
-
-
 </section>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
