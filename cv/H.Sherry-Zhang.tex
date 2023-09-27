@@ -1,0 +1,241 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\colorlet{awesome}{awesome-red}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{H. Sherry Zhang}{}
+
+\address{Last updated on September, 2023}
+
+\email{\href{mailto:Huize.Zhang@monash.edu}{\nolinkurl{Huize.Zhang@monash.edu}}}
+\homepage{huizezhangsh.netlify.app}
+\github{huizezhang-sherry}
+\twitter{huizezhangsh}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{2em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\honortitlestyle{#1}}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\honordatestyle{#1}}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {}
+    {H. Sherry Zhang~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\begin{cventries}
+    \cventry{Doctor of Philosophy}{Monash University}{Melbourne, Australia}{Feb 2020 - Aug 2023}{\begin{cvitems}
+\item Thesis: New tools for visualising and explaining multivariate spatio-temporal data, supervised by Dianne Cook, Patricia Menéndez, Nicolas Langrené (BNU-HKBU United International College, China), and Ursula Laa (BOKU, Austria)
+\end{cvitems}}
+    \cventry{Bachelor of Commerce (Honours), Econometrics \& Business Analytics}{Monash University}{Melbourne, Australia}{Feb 2016 - Dec 2019}{\begin{cvitems}
+\item First Class Honours (H1)
+\item Thesis: Exploration of judicial facial expression in videos of legal proceedings, supervised by Dianne Cook and Russell Smyth
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\hypertarget{bibliography}{}
+\leavevmode\vadjust pre{\hypertarget{ref-RJ-2021-105}{}}%
+\CSLLeftMargin{1. }%
+\CSLRightInline{Zhang, H. S., Cook, D., Laa, U., Langrené, N., \&
+Menéndez, P. (2021). Visual Diagnostics for Constrained Optimisation
+with Application to Guided Tours. \emph{The R Journal}, \emph{13}(2),
+624--641. \url{https://doi.org/10.32614/RJ-2021-105}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-lee_state}{}}%
+\CSLLeftMargin{2. }%
+\CSLRightInline{Lee, S., Cook, D., Silva, N. da, Laa, U., Spyrison, N.,
+Wang, E., \& Zhang, H. S. (2022). The state-of-the-art on tours for
+dynamic visualization of high-dimensional data. \emph{WIREs
+Computational Statistics}, \emph{14}(4), e1573.
+\url{https://doi.org/10.1002/wics.1573}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhang_wrangling_2022}{}}%
+\CSLLeftMargin{3. }%
+\CSLRightInline{Zhang, H. S., Cook, D., Laa, U., Langrené, N., \&
+Menéndez, P. (2022). cubble: An R Package for Organizing and Wrangling
+Multivariate Spatio-temporal Data. In \emph{Submitted to Journal of
+Statistical Software}.
+\url{https://github.com/huizezhang-sherry/paper-cubble}}
+
+\hypertarget{talks}{%
+\section{Talks}\label{talks}}
+
+\begin{cvhonors}
+    \cvhonor{}{\strong{Research Tools Workshop}: \url{https://sherryzhang-quarto2023.netlify.app/}}{Monash University}{Sept 2023}
+    \cvhonor{}{\strong{Visiting talk}: \url{https://sherryzhang-germany2023.netlify.app/}}{University of Münster, Germany}{May 2023}
+    \cvhonor{}{\strong{Visiting talk}: \url{https://sherryzhang-ireland2023.netlify.app/}}{Maynooth University, Ireland}{Apr 2023}
+    \cvhonor{}{\strong{The Australia Spatial Econometrics \& Statistics Workshop}: \url{https://sherryzhang-monashspatial2023.netlify.app/}}{Monash University \newline}{Feb 2023 \newline}
+    \cvhonor{}{\strong{ECSS Miniconference}: \url{https://sherryzhang-ecssmini2022.netlify.app/}}{virtual}{Nov 2022}
+    \cvhonor{}{\strong{CANSSI Ontario Statistics Software Conference (invited)}: \url{https://sherryzhang-canssi2022.netlify.app/}}{virtual \newline}{Nov 2022 \newline}
+    \cvhonor{}{\strong{UseR! 2022}: \url{https://sherryzhang-user2022.netlify.app/}}{virtual}{Jun 2022}
+    \cvhonor{}{\strong{UseR! 2021}: \url{https://sherryzhang-user2021.netlify.app/}}{virtual}{Jul 2021}
+\end{cvhonors}
+
+\hypertarget{teaching}{%
+\section{Teaching}\label{teaching}}
+
+\begin{cvhonors}
+    \cvhonor{}{\strong{ETC5512 Wild Caught Data}\space \url{https://wcd.numbat.space/}\newline \em{on wrangling open data into analysis ready shape through case study on US air traffic data, Australia census and election data, among others}}{Monash University\newline}{Sem 1 \newline 20 \& 21\newline}
+    \cvhonor{}{\strong{ETC5521 Exploratory Data Analysis}\space \url{https://eda.numbat.space/}\newline \em{project-based exploratory data analysis class}}{Monash University\newline}{Sem 2 \newline 20 \& 21\newline}
+    \cvhonor{}{\strong{ETC1010/ETC5510 Introduction to Data Analysis}\space \url{https://ida.numbat.space/}\newline \em{on introducing tidyverse tools for data wrangling \& visualising, basics in web scraping, text analysis, and programming with R}}{Monash University\newline}{Sem 1 20 \newline Sem 2 19 \newline}
+\end{cvhonors}
+
+\hypertarget{workshop}{%
+\section{Workshop}\label{workshop}}
+
+\begin{cvhonors}
+    \cvhonor{}{\strong{Switching between space and time: Spatio-temporal analysis with cubble}\space\url{https://sherryzhang-rladiesvienna2023.netlify.app/}}{R Ladies Vienna \newline}{Apr 2023 \newline}
+    \cvhonor{}{\strong{Wrangling spatio-temporal data with R}\space\url{https://sptm-tidy.numbat.space/}}{WOMBAT}{Dec 2022}
+    \cvhonor{}{\strong{Switching between space and time: Spatio-temporal analysis with cubble}\space\url{https://sherryzhang-rladiesmelb2022.netlify.app/}}{R Ladies Melbourne \newline}{Sept 2022 \newline}
+\end{cvhonors}
+
+\hypertarget{software}{%
+\section{Software}\label{software}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{cubble}: a multivariate data structure for organizing and wrangling spatio-temporal data\newline \url{https://cran.r-project.org/web/packages/cubble/index.html}}{}{2022 -\newline}
+    \cvhonor{}{\textbf{rjtools}: tools for authors to write, check, and submit articles to the R Journal\newline \url{https://github.com/rjournal/rjtools}}{}{2021 -\newline}
+    \cvhonor{}{\textbf{rj}: tools to help the (associate) editors with the reviewing process of the R journal\newline \url{https://github.com/rjournal/rj}}{}{2021 -\newline}
+    \cvhonor{}{\textbf{ferrn}: a package for visual diagnostics of projection pursuit guided tour optimisation\newline \url{https://cran.r-project.org/web/packages/ferrn/index.html}}{}{2021 -\newline}
+    \cvhonor{}{\textbf{tourr}: implementing a data structure for collecting guided tour optimistaion data\newline \url{https://cran.r-project.org/web/packages/tourr/index.html}}{}{2020 -\newline}
+\end{cvhonors}
+
+\hypertarget{awards}{%
+\section{Awards}\label{awards}}
+
+\begin{cvhonors}
+    \cvhonor{}{Opportunity scholar}{Posit::conf(2023)}{2023}
+    \cvhonor{}{People's Choice Award for the presentation in ECSS Miniconference}{Statistical Society of Australia}{2022}
+    \cvhonor{}{Postgraduate (PhD) Research Scholarship }{CSIRO Data61}{20 - 23}
+    \cvhonor{}{Co-Funded Graduate Research Scholarship }{Monash Business School}{ 20 - 23}
+    \cvhonor{}{Dean's Honours List}{Monash Business School}{2020}
+    \cvhonor{}{Summer Vacation Research Scholarship}{Monash University}{2019}
+\end{cvhonors}
+
+\hypertarget{affiliation}{%
+\section{Affiliation}\label{affiliation}}
+
+\begin{cvhonors}
+    \cvhonor{}{Non-Uniform Monash Business Analytics Team (Monash NUMBATs)}{}{1. }
+    \cvhonor{}{Statistical Society of Australia (VIC branch)}{}{2. }
+    \cvhonor{}{Commonwealth Scientific and Industrial Research Organisation (CSIRO) Data61}{}{3. }
+\end{cvhonors}
+
+\hypertarget{service}{%
+\section{Service}\label{service}}
+
+\begin{cvhonors}
+    \cvhonor{}{Monash NUMBATs seminar organiser: \url{https://numbat.space/}}{}{2022}
+\end{cvhonors}
+
+
+
+\end{document}
