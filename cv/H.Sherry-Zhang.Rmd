@@ -25,7 +25,8 @@ library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where, ~ details,
   
-  "Doctor of Philosophy", "Feb 2020 - Aug 2023", "Monash University", "Melbourne, Australia","Thesis: New tools for visualising and explaining multivariate spatio-temporal data, supervised by Dianne Cook, Patricia Menéndez, Nicolas Langrené (BNU-HKBU United International College, China), and Ursula Laa (BOKU, Austria)",
+  "Doctor of Philosophy (PhD), Mathematics and Statistics", "Feb 2020 - Dec 2023", "Monash University", "Melbourne, Australia","Thesis: New tools for visualising and explaining multivariate spatio-temporal data",
+   "Doctor of Philosophy (PhD), Mathematics and Statistics", "Feb 2020 - Dec 2023", "Monash University", "Melbourne, Australia","Supervisors: Dianne Cook, Patricia Menéndez, Nicolas Langrené (BNU-HKBU United International College, China), and Ursula Laa (BOKU, Austria)",
   
   
   
@@ -53,6 +54,7 @@ bibliography_entries(here::here("cv/pub.bib"))
 ```{r conf}
 tribble(
   ~ conf, ~ date, ~ where, ~ topic, ~ link, ~content,
+  "CMStatistics (invited)", "Dec 2023", "Berlin, Germany", "Visual diagnostics for constrained optimization with application to guided tours", "https://sherry-cmstats2023.netlify.app/", "",
   
   "Research Tools Workshop", "Sept 2023", "Monash University", " ", "https://sherryzhang-quarto2023.netlify.app/", "",
   
