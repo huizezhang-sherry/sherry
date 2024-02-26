@@ -4,25 +4,29 @@ image: avatar.jpeg
 about: 
   template: jolla
   links: 
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/huizezhangsh
+    - text: "{{< ai google-scholar size=xl >}} Google Scholar"
+      href: https://scholar.google.com/citations?user=HfvBzAQAAAAJ&hl=it
     - icon: github
       text: Github
       href: https://github.com/huizezhang-sherry
     - icon: envelope-fill
       text: Email
-      href: "mailto:huize.Zhang@monash.edu"
+      href: "mailto:huize.Zhang@austin.utexas.edu"
     - icon: person-lines-fill
       text: CV
       href: cv/H.Sherry-Zhang.pdf
+    
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I am a final year PhD candidate at Monash University. My research provides data wrangling and visualisation tools for analysing multivariate spatio-temporal data. In 2024, I will join the Department of Statistics and Data Sciences at University of Texas, Austin as a postdoctoral research fellow.
+I am a Postdoc Research Fellow in the Department of Statistics and Data Science at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I receive my PhD from Monash University in 2023 and my topic is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
+
+<!-- <br> -->
+
+**News: **My R package [`cubble`](https://github.com/huizezhang-sherry/cubble) wins the [John M. Chambers Statistical Software Award](https://community.amstat.org/jointscsg-section/awards/john-m-chambers)!
 
 <!--# supervised by Di Cook, Patricia Menéndez, Ursula Laa, and Nicolas Langrené.  -->
 
 <!-- One of my projects, [ferrn](https://github.com/huizezhang-sherry/ferrn), focuses on creating diagnostic plots to understand the optimisers in projection pursuit, a multivariate dimension reduction method. I have also been working on a spatio-temporal data class, [cubble](https://github.com/huizezhang-sherry/cubble) (cubical-tibble), to help with data wrangling and making glyph maps. -->
 
-<img src="https://ghchart.rshah.org/huizezhang-sherry" alt="Sherry Zhang&apos;s Github chart"/>
+<center><img src="https://ghchart.rshah.org/huizezhang-sherry" alt="Sherry Zhang&apos;s Github chart"/></center>

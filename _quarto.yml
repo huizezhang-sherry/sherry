@@ -20,9 +20,7 @@ website:
       - icon: github
         href: https://github.com/huizezhang-sherry
         aria-label: GitHub
-      - icon: twitter
-        href: https://twitter.com/huizezhangsh
-        aria-label: Twitter
+  favicon: avatar.jpeg
 
 format:
   html:
