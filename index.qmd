@@ -19,11 +19,14 @@ about:
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I am a Postdoc Research Fellow in the Department of Statistics and Data Science at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I receive my PhD from Monash University in 2023 and my topic is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
+I am a Postodoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I receive my PhD from Monash University in 2023 and my topic is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
 
-<!-- <br> -->
 
-**News: **My R package [`cubble`](https://github.com/huizezhang-sherry/cubble) wins the [John M. Chambers Statistical Software Award](https://community.amstat.org/jointscsg-section/awards/john-m-chambers)!
+<center class="readmore">[Read more &rarr;](research/index.html)</center>
+
+
+
+<br>
 
 <!--# supervised by Di Cook, Patricia Menéndez, Ursula Laa, and Nicolas Langrené.  -->
 

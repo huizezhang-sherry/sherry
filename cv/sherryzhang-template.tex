@@ -87,7 +87,7 @@
 % Section entry: Title, start date, end date, caption
 \newcommand{\secentry}[4]{
     \noindent
-    \begin{tabular}{@{} p{0.1\linewidth} p{0.87\linewidth} @{}} % @{} to remove left and right padding
+    \begin{tabular}{@{} p{0.13\linewidth} p{0.85\linewidth} @{}} % @{} to remove left and right padding
         \timeperiod{#2}{#3} & \textbf{#1} \newline #4 % start date, end date, main text
     \end{tabular}
     \vspace{0.2cm}
@@ -96,7 +96,7 @@
 % Simple section entry: start date, end date (optional), caption
 \newcommand{\simpleentry}[3]{
     \noindent
-    \begin{tabular}{@{}p{0.18\linewidth} p{0.8\linewidth}@{}} % @{} to remove left and right padding
+    \begin{tabular}{@{}p{0.13\linewidth} p{0.8\linewidth}@{}} % @{} to remove left and right padding
         \timeperiod{#1}{#2} & #3             % start date, end date, caption
     \end{tabular}
     % \vspace{0.15cm}
@@ -106,14 +106,14 @@
 % Talk entry: Entry, location, date
 \newcommand{\twocolumnentry}[2]{
     \noindent
-    \begin{tabular}{@{} p{0.1\linewidth} p{0.89\linewidth} @{}} % @{} to remove left and right padding
-        \textit{#2} & #1 
+    \begin{tabular}{@{} p{0.13\linewidth} p{0.85\linewidth} @{}} % @{} to remove left and right padding
+        #2 & #1 
     \end{tabular}
 }
 
 \newcommand{\twocolumnentries}[3]{
     \noindent
-    \begin{tabular}{@{} p{0.1\linewidth} p{0.89\linewidth} @{}} % @{} to remove left and right padding
+    \begin{tabular}{@{} p{0.13\linewidth} p{0.85\linewidth} @{}} % @{} to remove left and right padding
         \textbf{#2} & #1 
     \end{tabular}
 }
@@ -129,7 +129,7 @@
 
 \newcommand{\talkentry}[3]{
     \noindent
-    \begin{tabular}{@{} p{0.15\linewidth} p{0.61\linewidth} >{\raggedleft}p{0.20\linewidth} @{}} % @{} to remove left and right padding
+    \begin{tabular}{@{} p{0.13\linewidth} p{0.63\linewidth} >{\raggedleft}p{0.20\linewidth} @{}} % @{} to remove left and right padding
         #3 & #1 & \textit{#2}
     \end{tabular}
 }

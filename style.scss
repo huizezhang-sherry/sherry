@@ -15,9 +15,15 @@ p, ul, ol, .menu-text {
   font-size: 20px;
   line-height: normal;
   text-transform: none !important; 
-  text-align: justify 
+  text-align: justify
 }
 
+
+center.readmore {
+  font-family: $font-body;
+  font-size: 20px;
+  text-align: center
+}
 
 h1, h2, h3, h4, h5, figcaption, .navbar-title {
   font-family: $font-header;
