@@ -19,7 +19,7 @@ about:
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I am a Postodoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I receive my PhD from Monash University in 2023 and my area of research is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
+I am a Postodoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I received my PhD from Monash University in 2023 and my area of research is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
 
 
 <center class="readmore">[Read more &rarr;](research/index.html)</center>
