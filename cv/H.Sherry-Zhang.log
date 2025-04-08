@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  8 APR 2025 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  8 APR 2025 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,17 +584,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 132--135
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 134--137
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 132--135
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 134--137
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 132--135
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 134--137
 [] 
  []
 
@@ -603,234 +603,234 @@ Overfull \hbox (2.2233pt too wide) in paragraph at lines 132--135
 [1
 
 {/Users/huizezhang/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 141--146
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 143--148
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 141--146
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 143--148
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 141--146
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 143--148
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 151--155
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 153--157
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 151--155
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 153--157
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 151--155
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 153--157
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 151--155
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 153--157
 [] 
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 166--168
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 168--170
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 166--168
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 168--170
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 171--180
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 173--182
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--180
+Underfull \hbox (badness 10000) in paragraph at lines 173--182
 
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 183--187
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 185--189
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 183--187
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 185--189
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 183--187
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 185--189
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 183--187
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 185--189
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--187
+Underfull \hbox (badness 10000) in paragraph at lines 185--189
 
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 190--193
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 192--195
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 190--193
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 192--195
 []
  []
 
 
-Overfull \hbox (4.43915pt too wide) in paragraph at lines 190--193
+Overfull \hbox (4.43915pt too wide) in paragraph at lines 192--195
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--193
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 201--203
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 203--205
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 201--203
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 203--205
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 209--212
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 211--214
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 209--212
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 211--214
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 209--212
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 211--214
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--212
+Underfull \hbox (badness 10000) in paragraph at lines 211--214
 
  []
 
 
 
 [2]
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 219--222
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 221--224
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 219--222
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 221--224
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 219--222
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 221--224
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--222
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
 
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 226--229
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 228--231
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 226--229
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 228--231
 []
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 226--229
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 228--231
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
 
  []
 
 
-Overfull \hbox (2.2233pt too wide) in paragraph at lines 233--234
+Overfull \hbox (2.2233pt too wide) in paragraph at lines 235--236
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
@@ -846,14 +846,14 @@ Package rerunfilecheck Info: File `H.Sherry-Zhang.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  12598 strings out of 475111
- 196450 string characters out of 5762757
+ 196454 string characters out of 5762757
  662971 words of memory out of 5000000
  35420 multiletter control sequences out of 15000+600000
- 566387 words of font info for 72 fonts, out of 8000000 for 9000
+ 566374 words of font info for 72 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
  82i,8n,84p,1058b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></Users/huizezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on H.Sherry-Zhang.pdf (3 pages, 150971 bytes).
+Output written on H.Sherry-Zhang.pdf (3 pages, 150527 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
