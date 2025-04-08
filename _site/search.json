@@ -25,7 +25,7 @@
     "href": "blogs/2023-08-24-phdone/index.html",
     "title": "PhDone",
     "section": "",
-    "text": "Today, I submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research:\n\ndesigning diagnostic plots for projection pursuit optimisation, applied to guided tour,\ndeveloping a spatio-temporal data structure in R and using glyph maps to visualise the data, and\nproposing a data pipeline approach under the tidy framework to construct indexes.\n\nSurprisingly (and hopefully), the last two words turned out to be actual Wordle solutions: “glyph” on 18th November 2022, and “index” on 15th August 2023 - just a few days before the submission deadline! Realising today’s Wordle solution is what I’ve been working on daily feels like stumbling upon the crossword clue “corolla leaf” 🌸, or in a more recent analogy, spotting the Adélie penguins in the Sea Life 🐧.\nTo see what I have been working on for the past 3.5 years, you can check out my thesis at https://sherryzhang-thesis.netlify.app/"
+    "text": "H. Sherry Zhang\n\n2023-08-24\n\n\n\nToday, I submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research:\n\ndesigning diagnostic plots for projection pursuit optimisation, applied to guided tour,\ndeveloping a spatio-temporal data structure in R and using glyph maps to visualise the data, and\nproposing a data pipeline approach under the tidy framework to construct indexes.\n\nSurprisingly (and hopefully), the last two words turned out to be actual Wordle solutions: “glyph” on 18th November 2022, and “index” on 15th August 2023 - just a few days before the submission deadline! Realising today’s Wordle solution is what I’ve been working on daily feels like stumbling upon the crossword clue “corolla leaf” 🌸, or in a more recent analogy, spotting the Adélie penguins in the Sea Life 🐧.\nTo see what I have been working on for the past 3.5 years, you can check out my thesis at https://sherryzhang-thesis.netlify.app/"
   },
   {
     "objectID": "research/index.html",
@@ -67,7 +67,7 @@
     "href": "blogs/2022-10-12-cran-ecosystem/index.html",
     "title": "Diving into dependen-“sea”",
     "section": "",
-    "text": "When writing a package, we may want to use functions in other packages. This creates a dependency for our package and a reverse dependency on the package we borrow functions from. As one of the recipients of the isoband email1, I’m curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…"
+    "text": "How CRAN packages are interconnected\nH. Sherry Zhang\n\n2022-10-18\nWhen writing a package, we may want to use functions in other packages. This creates a dependency for our package and a reverse dependency on the package we borrow functions from. As one of the recipients of the isoband email1, I’m curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…"
   },
   {
     "objectID": "blogs/2022-10-12-cran-ecosystem/index.html#footnotes",
