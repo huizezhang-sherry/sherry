@@ -1,31 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "blogs/2022-10-12-cran-ecosystem/index.html",
+    "href": "blogs/2022-10-12-cran-ecosystem/index.html",
+    "title": "Diving into dependen-“sea”",
+    "section": "",
+    "text": "How CRAN packages are interconnected\nH. Sherry Zhang\n\n2022-10-18\nWhen writing a package, we may want to use functions in other packages. This creates a dependency for our package and a reverse dependency on the package we borrow functions from. As one of the recipients of the isoband email1, I’m curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…"
+  },
+  {
+    "objectID": "blogs/2022-10-12-cran-ecosystem/index.html#footnotes",
+    "href": "blogs/2022-10-12-cran-ecosystem/index.html#footnotes",
+    "title": "Diving into dependen-“sea”",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOn 5th Oct, CRAN sent out a massive email to inform 4747 downstream package maintainers of the potential archive of package isoband on 2022-10-19.↩︎"
+  },
+  {
+    "objectID": "blogs/index.html",
+    "href": "blogs/index.html",
     "title": "H. Sherry Zhang",
     "section": "",
-    "text": "I am a Postdoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with Roger Peng. I received my PhD from Monash University in 2023 and my area of research is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.\n\nRead more →"
-  },
-  {
-    "objectID": "blogs/2022-05-21-ggplot-sf/index.html",
-    "href": "blogs/2022-05-21-ggplot-sf/index.html",
-    "title": "How long do maps on ggplot facets take?",
-    "section": "",
-    "text": "If you’re a ggplot user, faceted plots must be under your belt. If you happen to do some spatial analysis, you can’t be more familiar with maps. Today, I will show you my findings on the rendering time of faceted map.\nThis example comes from Chapter 7 of Paula Moraga’s book Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny and I have simplified it for my demonstration. In essence, there are two datasets:\nSimple feature collection with 88 features and 1 field\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -84.8203 ymin: 38.40342 xmax: -80.5182 ymax: 42.32713\nGeodetic CRS:  NAD83\n# A tibble: 88 × 2\n   NAME                                                                 geometry\n   &lt;chr&gt;                                                           &lt;POLYGON [°]&gt;\n 1 Auglaize   ((-84.13476 40.65755, -84.13467 40.65755, -84.13405 40.65753, -84…\n 2 Crawford   ((-82.77258 40.99589, -82.77258 40.99588, -82.77168 40.99588, -82…\n 3 Montgomery ((-84.06231 39.8366, -84.06301 39.83665, -84.06501 39.83677, -84.…\n 4 Guernsey   ((-81.22986 40.06315, -81.22987 40.06308, -81.22992 40.06119, -81…\n 5 Clark      ((-83.83875 39.8233, -83.83889 39.82335, -83.83904 39.82339, -83.…\n 6 Gallia     ((-82.18737 38.72608, -82.18727 38.72558, -82.18707 38.72488, -82…\n 7 Fairfield  ((-82.82307 39.80773, -82.82307 39.8078, -82.82305 39.80801, -82.…\n 8 Darke      ((-84.43157 40.15801, -84.43148 40.15487, -84.43148 40.1542, -84.…\n 9 Monroe     ((-81.22569 39.57838, -81.24065 39.57883, -81.2413 39.57885, -81.…\n10 Portage    ((-81.3184 40.98861, -81.31892 40.98862, -81.31927 40.98862, -81.…\n# … with 78 more rows\n# A tibble: 1,848 × 3\n   county  year   SIR\n   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1 Adams   1968 0.725\n 2 Adams   1969 0.588\n 3 Adams   1970 1.03 \n 4 Adams   1971 0.654\n 5 Adams   1972 1.05 \n 6 Adams   1973 0.693\n 7 Adams   1974 1.15 \n 8 Adams   1975 1.17 \n 9 Adams   1976 0.936\n10 Adams   1977 0.644\n# … with 1,838 more rows\nThe details on calculating SIR is not the focus of this post and Section 7.1 to 7.2 of Paula’s book has detailed all the steps you need if interested. Here I attach the script to generate these two data in case you would like to give it a spin:\nWhat we would like to do here is to show those SIR values of each county on the map across year. This would require us to join the two datasets, supply the combined data into ggplot, plot the underlying map, fill the county polygon with SIR, make facets with year, and lastly add a few tweaks on theme and the scale of fill. Let’s give this plot a name, say target:\ncombined &lt;- ohio %&gt;% \n  left_join(sir, by = c(\"NAME\" = \"county\"))\n\nWarning in sf_column %in% names(g): Each row in `x` is expected to match at most 1 row in `y`.\nℹ Row 1 of `x` matches multiple rows.\nℹ If multiple matches are expected, set `multiple = \"all\"` to silence this\n  warning.\n\ntarget &lt;- combined %&gt;% \n  ggplot() + \n  geom_sf(aes(fill = SIR)) +\n  facet_wrap(~year, dir = \"h\", ncol = 7) +\n  ggtitle(\"SIR\") + \n  theme_bw() +\n  theme(\n    axis.text.x = element_blank(),\n    axis.text.y = element_blank(),\n    axis.ticks = element_blank()\n  ) +\n  scale_fill_gradient2(\n    midpoint = 1, low = \"blue\", mid = \"white\", high = \"red\"\n  )\n\ntarget\nEasy peasy.\nBut, have you thought about how long it would take to bring this plot to you?\nWarning in sf_column %in% names(g): Each row in `x` is expected to match at most 1 row in `y`.\nℹ Row 1 of `x` matches multiple rows.\nℹ If multiple matches are expected, set `multiple = \"all\"` to silence this\n  warning.\nLet me show you some components of this plot as benchmarks, here I have:\nokay, now it is your time to make a guess:"
-  },
-  {
-    "objectID": "blogs/2022-05-21-ggplot-sf/index.html#footnotes",
-    "href": "blogs/2022-05-21-ggplot-sf/index.html#footnotes",
-    "title": "How long do maps on ggplot facets take?",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nTo make a proper benchmark of time, ideally each plot (p1 - p21) should be evaluated repetitively to obtain a distribution of the elapsed time. I set up a script with 50 repetitions and let it run overnight, but what I got next morning was “RStudio quit unexpectedly”. I suspect there is something going on with opening and closing the graphic devices too many times…↩︎"
-  },
-  {
-    "objectID": "blogs/2023-08-24-phdone/index.html",
-    "href": "blogs/2023-08-24-phdone/index.html",
-    "title": "PhDone",
-    "section": "",
-    "text": "H. Sherry Zhang\n\n2023-08-24\n\n\n\nToday, I submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research:\n\ndesigning diagnostic plots for projection pursuit optimisation, applied to guided tour,\ndeveloping a spatio-temporal data structure in R and using glyph maps to visualise the data, and\nproposing a data pipeline approach under the tidy framework to construct indexes.\n\nSurprisingly (and hopefully), the last two words turned out to be actual Wordle solutions: “glyph” on 18th November 2022, and “index” on 15th August 2023 - just a few days before the submission deadline! Realising today’s Wordle solution is what I’ve been working on daily feels like stumbling upon the crossword clue “corolla leaf” 🌸, or in a more recent analogy, spotting the Adélie penguins in the Sea Life 🐧.\nTo see what I have been working on for the past 3.5 years, you can check out my thesis at https://sherryzhang-thesis.netlify.app/"
+    "text": "PhDone\n\n\n\n\n\n\nPhD\n\n\n\nI submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research:\n\n\n\n\n\nAug 24, 2023\n\n\nH. Sherry Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nDiving into dependen-“sea”\n\n\nHow CRAN packages are interconnected\n\n\n\nsoftware development\n\nCRAN\n\n\n\nAs one of the recipients of the isoband email, I’m curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…\n\n\n\n\n\nOct 18, 2022\n\n\nH. Sherry Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nHow long do maps on ggplot facets take?\n\n\n\n\n\n\ndata visualization\n\nspatial data\n\n\n\nWhen creating time-faceted maps in ggplot2, you might notice that things start to slow down as more time periods are added…\n\n\n\n\n\nMay 21, 2022\n\n\nH. Sherry Zhang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "research/index.html",
@@ -56,24 +49,31 @@
     "text": "Projection pursuit is a technique used to find interesting low-dimensional linear projections of high dimension data by optimising an index function on projection matrices. The index function could be non-linear, computationally expensive to calculate the gradient, and may have local optima, which are also interesting for projection pursuit to explore. This work has designed four diagnostic plots to visualise the optimisation routine in projection pursuit, and Figure 3 is one of them, plotting two optimisation paths in a 5D unit sphere space. This work has been published in the R Journal.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Search paths of a random search and a pseudo derivative optimiser animated in the basis space of a 5D unit sphere."
   },
   {
-    "objectID": "blogs/index.html",
-    "href": "blogs/index.html",
+    "objectID": "blogs/2023-08-24-phdone/index.html",
+    "href": "blogs/2023-08-24-phdone/index.html",
+    "title": "PhDone",
+    "section": "",
+    "text": "H. Sherry Zhang\n\n2023-08-24\n\n\n\nToday, I submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research:\n\ndesigning diagnostic plots for projection pursuit optimisation, applied to guided tour,\ndeveloping a spatio-temporal data structure in R and using glyph maps to visualise the data, and\nproposing a data pipeline approach under the tidy framework to construct indexes.\n\nSurprisingly (and hopefully), the last two words turned out to be actual Wordle solutions: “glyph” on 18th November 2022, and “index” on 15th August 2023 - just a few days before the submission deadline! Realising today’s Wordle solution is what I’ve been working on daily feels like stumbling upon the crossword clue “corolla leaf” 🌸, or in a more recent analogy, spotting the Adélie penguins in the Sea Life 🐧.\nTo see what I have been working on for the past 3.5 years, you can check out my thesis at https://sherryzhang-thesis.netlify.app/"
+  },
+  {
+    "objectID": "blogs/2022-05-21-ggplot-sf/index.html",
+    "href": "blogs/2022-05-21-ggplot-sf/index.html",
+    "title": "How long do maps on ggplot facets take?",
+    "section": "",
+    "text": "If you’re a ggplot user, faceted plots must be under your belt. If you happen to do some spatial analysis, you can’t be more familiar with maps. Today, I will show you my findings on the rendering time of faceted map.\nThis example comes from Chapter 7 of Paula Moraga’s book Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny and I have simplified it for my demonstration. In essence, there are two datasets:\nSimple feature collection with 88 features and 1 field\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -84.8203 ymin: 38.40342 xmax: -80.5182 ymax: 42.32713\nGeodetic CRS:  NAD83\n# A tibble: 88 × 2\n   NAME                                                                 geometry\n   &lt;chr&gt;                                                           &lt;POLYGON [°]&gt;\n 1 Auglaize   ((-84.13476 40.65755, -84.13467 40.65755, -84.13405 40.65753, -84…\n 2 Crawford   ((-82.77258 40.99589, -82.77258 40.99588, -82.77168 40.99588, -82…\n 3 Montgomery ((-84.06231 39.8366, -84.06301 39.83665, -84.06501 39.83677, -84.…\n 4 Guernsey   ((-81.22986 40.06315, -81.22987 40.06308, -81.22992 40.06119, -81…\n 5 Clark      ((-83.83875 39.8233, -83.83889 39.82335, -83.83904 39.82339, -83.…\n 6 Gallia     ((-82.18737 38.72608, -82.18727 38.72558, -82.18707 38.72488, -82…\n 7 Fairfield  ((-82.82307 39.80773, -82.82307 39.8078, -82.82305 39.80801, -82.…\n 8 Darke      ((-84.43157 40.15801, -84.43148 40.15487, -84.43148 40.1542, -84.…\n 9 Monroe     ((-81.22569 39.57838, -81.24065 39.57883, -81.2413 39.57885, -81.…\n10 Portage    ((-81.3184 40.98861, -81.31892 40.98862, -81.31927 40.98862, -81.…\n# … with 78 more rows\n# A tibble: 1,848 × 3\n   county  year   SIR\n   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1 Adams   1968 0.725\n 2 Adams   1969 0.588\n 3 Adams   1970 1.03 \n 4 Adams   1971 0.654\n 5 Adams   1972 1.05 \n 6 Adams   1973 0.693\n 7 Adams   1974 1.15 \n 8 Adams   1975 1.17 \n 9 Adams   1976 0.936\n10 Adams   1977 0.644\n# … with 1,838 more rows\nThe details on calculating SIR is not the focus of this post and Section 7.1 to 7.2 of Paula’s book has detailed all the steps you need if interested. Here I attach the script to generate these two data in case you would like to give it a spin:\nWhat we would like to do here is to show those SIR values of each county on the map across year. This would require us to join the two datasets, supply the combined data into ggplot, plot the underlying map, fill the county polygon with SIR, make facets with year, and lastly add a few tweaks on theme and the scale of fill. Let’s give this plot a name, say target:\ncombined &lt;- ohio %&gt;% \n  left_join(sir, by = c(\"NAME\" = \"county\"))\n\nWarning in sf_column %in% names(g): Each row in `x` is expected to match at most 1 row in `y`.\nℹ Row 1 of `x` matches multiple rows.\nℹ If multiple matches are expected, set `multiple = \"all\"` to silence this\n  warning.\n\ntarget &lt;- combined %&gt;% \n  ggplot() + \n  geom_sf(aes(fill = SIR)) +\n  facet_wrap(~year, dir = \"h\", ncol = 7) +\n  ggtitle(\"SIR\") + \n  theme_bw() +\n  theme(\n    axis.text.x = element_blank(),\n    axis.text.y = element_blank(),\n    axis.ticks = element_blank()\n  ) +\n  scale_fill_gradient2(\n    midpoint = 1, low = \"blue\", mid = \"white\", high = \"red\"\n  )\n\ntarget\nEasy peasy.\nBut, have you thought about how long it would take to bring this plot to you?\nWarning in sf_column %in% names(g): Each row in `x` is expected to match at most 1 row in `y`.\nℹ Row 1 of `x` matches multiple rows.\nℹ If multiple matches are expected, set `multiple = \"all\"` to silence this\n  warning.\nLet me show you some components of this plot as benchmarks, here I have:\nokay, now it is your time to make a guess:"
+  },
+  {
+    "objectID": "blogs/2022-05-21-ggplot-sf/index.html#footnotes",
+    "href": "blogs/2022-05-21-ggplot-sf/index.html#footnotes",
+    "title": "How long do maps on ggplot facets take?",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nTo make a proper benchmark of time, ideally each plot (p1 - p21) should be evaluated repetitively to obtain a distribution of the elapsed time. I set up a script with 50 repetitions and let it run overnight, but what I got next morning was “RStudio quit unexpectedly”. I suspect there is something going on with opening and closing the graphic devices too many times…↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "H. Sherry Zhang",
     "section": "",
-    "text": "PhDone\n\n\n\n\n\n\nPhD\n\n\n\nI submitted my thesis! These three Wordle attempts summarise the three topics of my PhD research:\n\n\n\n\n\nAug 24, 2023\n\n\nH. Sherry Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nDiving into dependen-“sea”\n\n\nHow CRAN packages are interconnected\n\n\n\nsoftware development\n\n\nCRAN\n\n\n\n As one of the recipients of the isoband email, I’m curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…\n\n\n\n\n\nOct 18, 2022\n\n\nH. Sherry Zhang\n\n\n\n\n\n\n\n\n\n\n\n\nHow long do maps on ggplot facets take?\n\n\n\n\n\n\ndata visualization\n\n\nspatial data\n\n\n\nWhen creating time-faceted maps in ggplot2, you might notice that things start to slow down as more time periods are added…\n\n\n\n\n\nMay 21, 2022\n\n\nH. Sherry Zhang\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "blogs/2022-10-12-cran-ecosystem/index.html",
-    "href": "blogs/2022-10-12-cran-ecosystem/index.html",
-    "title": "Diving into dependen-“sea”",
-    "section": "",
-    "text": "How CRAN packages are interconnected\nH. Sherry Zhang\n\n2022-10-18\nWhen writing a package, we may want to use functions in other packages. This creates a dependency for our package and a reverse dependency on the package we borrow functions from. As one of the recipients of the isoband email1, I’m curious to know how interconnected CRAN packages are. Luckily, it is not too hard to get data on this, and so the journey begins…"
-  },
-  {
-    "objectID": "blogs/2022-10-12-cran-ecosystem/index.html#footnotes",
-    "href": "blogs/2022-10-12-cran-ecosystem/index.html#footnotes",
-    "title": "Diving into dependen-“sea”",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nOn 5th Oct, CRAN sent out a massive email to inform 4747 downstream package maintainers of the potential archive of package isoband on 2022-10-19.↩︎"
+    "text": "I am a Postdoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with Roger Peng. I received my PhD from Monash University in 2023 and my area of research is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.\n\nRead more about my research →"
   }
 ]

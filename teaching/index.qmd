@@ -1,0 +1,8 @@
+---
+page-layout: full
+margin: 0
+comments: false
+language:
+  listing-page-field-categories: "Topics"
+freeze: true
+---

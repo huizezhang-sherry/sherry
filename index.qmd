@@ -22,7 +22,7 @@ about:
 I am a Postdoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I received my PhD from Monash University in 2023 and my area of research is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
 
 
-<center class="readmore">[Read more &rarr;](research/index.html)</center>
+<center class="readmore">[Read more about my research &rarr;](research/index.html)</center>
 
 
 

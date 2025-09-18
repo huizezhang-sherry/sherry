@@ -14,6 +14,8 @@ website:
         text: About
       - href: research/index.qmd
         text: Research
+      - href: "https://huizezhang-sherry.github.io/SDS322E/"
+        text: Teaching
       - href: blogs/index.qmd
         text: Blog
     right:
