@@ -19,12 +19,9 @@ about:
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I am a Postdoctoral Fellow in the Department of Statistics and Data Sciences at the University of Texas at Austin with [Roger Peng](https://rdpeng.org/). I received my PhD from Monash University in 2023 and my area of research is on providing data wrangling and visualisation tools for analysing multivariate spatio-temporal data.
-
+I am a Postdoctoral Fellow at the University of Texas at Austin, working with [Roger Peng](https://rdpeng.org/). I received my PhD from Monash University in Australia in 2023 under the supervision of [Dianne Cook](https://www.dicook.org/), [Patricia Menéndez](https://www.patriciamenendez.com/about/), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://staff.uic.edu.cn/nicolaslangrene/en). My research focuses on making applied statistical analysis both easier and more robust by contributing to open source software and developing data analysis theory.
 
 <center class="readmore">[Read more about my research &rarr;](research/index.html)</center>
-
-
 
 <br>
 
