@@ -85,10 +85,10 @@
     } 
 
 % Section entry: Title, start date, end date, caption
-\newcommand{\secentry}[4]{
+\newcommand{\secentry}[5]{
     \noindent
     \begin{tabular}{@{} p{0.13\linewidth} p{0.85\linewidth} @{}} % @{} to remove left and right padding
-        \timeperiod{#2}{#3} & \textbf{#1} \newline #4 % start date, end date, main text
+        \timeperiod{#2}{#3} & \textbf{#1} \hfill \textbf{#5} \newline #4 
     \end{tabular}
     \vspace{0.2cm}
 }
