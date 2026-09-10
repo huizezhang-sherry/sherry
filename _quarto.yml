@@ -22,7 +22,7 @@ website:
       - icon: github
         href: https://github.com/huizezhang-sherry
         aria-label: GitHub
-  favicon: avatar.jpeg
+  favicon: avatar.jpg
 
 format:
   html:

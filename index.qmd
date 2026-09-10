@@ -1,6 +1,6 @@
 ---
 title: "H. Sherry Zhang"
-image: avatar.jpeg
+image: avatar.jpg
 about: 
   template: jolla
   links: 
@@ -19,7 +19,7 @@ about:
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I am a Postdoctoral Fellow at the University of Texas at Austin, working with [Roger Peng](https://rdpeng.org/). I received my PhD from Monash University in Australia in 2023 under the supervision of [Dianne Cook](https://www.dicook.org/), [Patricia Menéndez](https://www.patriciamenendez.com/about/), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://staff.uic.edu.cn/nicolaslangrene/en). My research focuses on making applied statistical analysis both easier and more robust by contributing to open source software and developing data analysis theory.
+I am a Postdoctoral Fellow in the Department of Statistics and Data Science at the University of Texas at Austin, working with [Roger Peng](https://rdpeng.org/). My research focuses on developing method, visualization, and software tools that support exploratory data analysis. My R package `cubble` won the 2024 [ASA John M. Chambers Statistical Software Award](https://community.amstat.org/jointscsg-section/awards/john-m-chambers). I received my PhD from Monash University in Australia in 2023 under the supervision of [Dianne Cook](https://www.dicook.org/), [Patricia Menéndez](https://www.patriciamenendez.com/about/), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://staff.uic.edu.cn/nicolaslangrene/en). 
 
 <center class="readmore">[Read more about my research &rarr;](research/index.html)</center>
 
@@ -29,4 +29,4 @@ I am a Postdoctoral Fellow at the University of Texas at Austin, working with [R
 
 <!-- One of my projects, [ferrn](https://github.com/huizezhang-sherry/ferrn), focuses on creating diagnostic plots to understand the optimisers in projection pursuit, a multivariate dimension reduction method. I have also been working on a spatio-temporal data class, [cubble](https://github.com/huizezhang-sherry/cubble) (cubical-tibble), to help with data wrangling and making glyph maps. -->
 
-<center><img src="https://ghchart.rshah.org/huizezhang-sherry" alt="Sherry Zhang&apos;s Github chart"/></center>
+<center><img src="https://ghchart.rshah.org/BF5700/huizezhang-sherry" alt="Sherry Zhang&apos;s Github chart"/></center>
