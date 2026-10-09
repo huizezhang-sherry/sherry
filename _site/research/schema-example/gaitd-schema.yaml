@@ -1,0 +1,73 @@
+meta:
+  type: schema
+nodes:
+- id: complete_case_filtering
+  objective: handle missing data in selected variables
+  decision: apply complete-case filtering to all columns except TC30, TCquit, and SCA which have NAs by design
+  rationale: TC30, TCquit, and SCA are exempted from the completeness check since they are interlaced with NAs by design (e.g., SCA being NA means the person has not yet quit, a valid state rather than missingness); every other selected column is required to be non-missing because most smoking studies adjust for age, marital status, education and race, and this analysis follows suit. 
+
+- id: age_restriction
+  objective: define the age range for analysis
+  decision: restrict analysis to respondents aged less than 80 years (age < 80)
+  rationale: age was right-censored at 80
+
+- id: data_quality_correction
+  objective: handle logically impossible self-reported values
+  decision: set both SCA and SIA to NA where SCA - SIA < 0
+  rationale: quitting age before smoking initiation age is a logical impossibility and such values cannot be trusted
+
+- id: impute_marital_young
+  objective: assign a defensible marital status for young respondents, regardless of what was recorded
+  decision: recode marital status to "Never married" for everyone age < 20
+  rationale: this age group is effectively certain to have never been married, so the value is set by age rather than trusting the raw survey response
+
+- id: impute_education_young
+  objective: assign a defensible education category for young respondents, regardless of what was recorded
+  decision: recode education to "< 9th grade" for age < 14; "9-11th grade" for 14 <= age <= 16; "High school" for 17 <= age <= 19
+  rationale: for respondents still of school age, highest-grade-completed is essentially determined by age, so the value is set by age rather than trusting the raw survey response
+
+- id: define_ever_smokers_sample
+  objective: define the analytic sample of ever-smokers
+  decision: include as valid observation if both conditions are met -- 1) SIA is not missing, and 2) either SCA and TCquit are both not missing, or SCA is missing and TC30 is not missing
+  rationale: SCA is missing by design for anyone who has not yet quit. the two-branch rule instead admits ex-smokers through the SCA/TCquit branch and current smokers through the TC30 branch
+
+- id: parent_distribution_choice
+  objective: select appropriate probability distribution for count response variable
+  decision: adopt negative binomial distribution as the parent distribution
+  rationale: the SIA distributions iboth unimodal and right-skewed, so a NBD parent is reasonable; more generally, there is evidence of overdispersion relative to a Poisson distribution.
+
+- id: special_value_mid_risk
+  objective: specify how to model inflation at ages surrounding peak teenage smoking uptake
+  decision: treat ages 12, 13, 14, 19, 20, 21 as a parametrically-inflated group, with the extra probability mass there sharing the same distributional shape (mean and dispersion) as the main population 
+  rationale: this mid-risk subgroup represents early and later smokers surrounding the high-risk age subgroup; these ages showed a moderate, secondary elevation in repeated training/test spikeplots of the data
+
+- id: special_value_high_risk
+  objective: specify how to model inflation at peak teenage smoking uptake ages
+  decision: treat ages 15, 16, 17, 18 as a nonparametrically-inflated group, with each age given its own freely-estimated extra probability 
+  rationale: this high-risk subgroup corresponds to frenetic teenage smoking uptake, the age range where the largest number of regular smokers start; these ages showed the largest, most persistent spikes across repeated training/test spikeplots of the data.
+
+- id: alteration_operator_decision
+  objective: determine whether to apply alteration operators
+  decision: do not use alteration operators (A.mix and A.mlm set to NULL)
+  rationale: not needed for this model specification
+
+- id: deflation_operator_decision
+  objective: determine whether to apply deflation operators
+  decision: do not use deflation operators (D.mix and D.mlm set to NULL)
+  rationale: not needed for this model specification
+
+- id: truncation_decision
+  objective: determine whether to specify a truncated region
+  decision: do not use truncation (no truncated region specified for SIA)
+  rationale: truncation not appropriate for this response variable
+
+- id: covariate_selection
+  objective: select covariates for the linear predictor of parent distribution mean
+  decision: include race2, gender, marital, and educ as covariates
+  rationale: most smoking studies adjust for age, marital status, education and race
+
+- id: fit_final_model
+  objective: fit the final GAITD regression model 
+  decision: fit a single vglm that puts together the pieces above -- response, parent distribution, special-value structure (inflation, alteration, deflation, and truncation), and covariates. The covariates only shift the mean of the negative binomial; the dispersion and the mid-/high-risk inflation probabilities are held fixed across the sample
+  rationale: only the mean is modeled with covariates; the dispersion and inflation probabilities are kept intercept-only, since extending covariate effects to them would substantially increase the number of parameters to estimate and make the results harder to interpret
+
