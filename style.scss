@@ -3,27 +3,27 @@
 // use sandstone as the base
 // $theme: "sandstone" !default;
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
 
 
 $font-header: 'Jost', sans-serif;
-$font-body: 'EB Garamond', sans-serif;
+$font-body: 'Source Serif 4', Georgia, serif;
 
 $link-color: #BF5700 !default;
 
 p, ul, ol, .menu-text {
   font-family: $font-body;
-  font-size: 20px;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 1.6;
   text-transform: none !important; 
-  text-align: justify
+  text-align: left
 }
 
 
 center.readmore {
   font-family: $font-body;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center
 }
 

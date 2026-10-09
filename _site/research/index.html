@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,9 +40,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8375a04b55f8adc7cd4793da3a70ca8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ccbe5e630d4bdaf028cecc1a67c8061d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -190,50 +158,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="a-tidy-framework-and-infrastructure-to-systematically-assemble-spatio-temporal-indexes-from-multivariate-data" class="level2">
-<h2 class="anchored" data-anchor-id="a-tidy-framework-and-infrastructure-to-systematically-assemble-spatio-temporal-indexes-from-multivariate-data">A tidy framework and infrastructure to systematically assemble spatio-temporal indexes from multivariate data</h2>
-<p>Indexes are useful for summarizing multivariate information into a single metric for monitoring, communicating, and decision-making. While most work has focused on defining new indexes for specific purposes, most indexes are not designed and implemented in a way that makes it easy to understand index behavior in different data conditions, and to determine how their structure affects their values and variation in values. I developed a modular data pipeline recommendation to assemble indexes, and it allows investigation of index behavior as part of the development procedure. One can compute indexes with different parameter choices, adjust steps in the index definition by adding, removing, and swapping them to experiment with various index designs, calculate uncertainty measures, and assess indexes’ robustness. <a href="#fig-idx-tour" class="quarto-xref">Figure&nbsp;1</a> shows the Global Gender Gap Index, comprised of four dimensions (economy, education, health, and politics) in a linear combination with equal weights of 0.25. The tour animation shows how the index value and country ranking changes as the weight assigned to the politics dimension changes. <em>This work has been published in Journal of Computational and Graphical Statistics.</em> <a href="https://doi.org/10.1080/10618600.2024.2374960"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/tidyindex"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-idx-tour" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-idx-tour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="idx-tour.gif" class="img-fluid figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idx-tour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Exploring the sensitivity of the Global Gender Gap Index (GGGI), by varying the politics component’s contribution. Bangladesh’s GGGI increases substantially when politics gains more weights, indicating that this component plays a large role in it’s relatively high value. Also, politics plays a substantial role in the GGGI’s for the top ranked countries, because each of them drops, to the state of being similar to the middle ranked countries when the politics component’s contribution is reduced.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="cubble-an-r-package-for-organizing-and-wrangling-multivariate-spatio-temporal-data" class="level2">
-<h2 class="anchored" data-anchor-id="cubble-an-r-package-for-organizing-and-wrangling-multivariate-spatio-temporal-data">cubble: An R Package for Organizing and Wrangling Multivariate Spatio-temporal Data</h2>
-<p>For many analyses, spatial and time components can be separately studied: for example, to explore the temporal trend of one variable for a single spatial location, or to model the spatial distribution of one variable at a given time. However for others, it is important to analyze different aspects of the spatio-temporal data simultaneously, for instance, temporal trends of multiple variables across locations. In order to facilitate the study of different portions or combinations of spatio-temporal data, we introduce a new class, cubble, with a suite of functions enabling easy slicing and dicing on different spatio-temporal components. <a href="#fig-glyphmap" class="quarto-xref">Figure&nbsp;2</a> is created by analyzing the daily maximum temperature data form Global Historical Climatology Network (GHCN) across stations in two Australia states, using the cubble data structure and the glyph maps are created using the <code>geom_glyph()</code> function, also implemented in the cubble package, as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tmax <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x_major =</span> long, <span class="at">x_minor =</span> month, <span class="at">y_major =</span> lat, <span class="at">y_minor =</span> tmax, ...)) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(..., <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_glyph_box</span>(...) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_glyph</span>(...) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="spatio-temporal-data-and-glyph-maps" class="level2">
+<h2 class="anchored" data-anchor-id="spatio-temporal-data-and-glyph-maps">Spatio-temporal data and glyph maps</h2>
+<p>Much of the methodological work on multivariate spatio-temporal data focuses on modelling. Before, and alongside, modelling, analysts also need to explore the data: to see how the temporal patterns of multiple variables vary across locations, to spot unusual locations or periods, and to check whether the data support the assumptions of a model. This exploration requires moving between spatial and temporal views of the same data, which existing data structures do not make easy. One visualization that shows space and time together is the glyph map, which draws each location’s time series as a small plot at its geographic position. <a href="#fig-glyphmap-poster" class="quarto-xref">Figure&nbsp;1</a> traces how my work builds glyph maps into the R ecosystem, from the original glyph map (2012) to cubble (2024) and sugarglider (2026).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-glyphmap" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-glyphmap-poster" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-glyphmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="glyphmap.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+<div aria-describedby="fig-glyphmap-poster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="glyphmap-poster.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Poster presented at the ENVR Workshop 2026, Houston, Texas: Seeing space and time together: glyph maps in R. Download the PDF."><img src="glyphmap-poster.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-glyphmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Glyph maps comparing temperature change between 1971-1975 and 2016-2020 for 54 stations in Victoria and New South Wales, Australia. Overlaid line plots show monthly temperature (a) where a hint of late summer warming can be seen. Transforming to temperature differences (c) shows pronounced changes between the two periods. The horizontal guideline marks zero difference. One station, Cobar, is highlighted in the glyph maps and shown separately (b, d). Here the late summer (Jan-Feb) warming pattern, which is more prevalent at inland locations, is clear.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-glyphmap-poster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Poster presented at the ENVR Workshop 2026, Houston, Texas: Seeing space and time together: glyph maps in R. <a href="glyphmap-poster.pdf">Download the PDF</a>.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><em>This work has been accepted by Journal of Statistical Software and won the ASA <a href="https://community.amstat.org/jointscsg-section/awards/john-m-chambers">John M. Chambers Statistical Software Award</a>.</em> <a href="https://arxiv.org/abs/2205.00259v2"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/cubble"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
+<p>The first piece of work is cubble, a new data structure that organizes spatio-temporal data into a spatial and a temporal face, with a suite of functions for switching between them and for slicing and dicing different spatio-temporal components. cubble also implements glyph maps as a ggplot2 extension, <code>geom_glyph()</code>, so they can be combined with base maps, scales and themes like any other ggplot2 layer. <em>This work has been published by Journal of Statistical Software and won the ASA <a href="https://community.amstat.org/jointscsg-section/awards/john-m-chambers">John M. Chambers Statistical Software Award</a>.</em> <a href="https://doi.org/10.18637/jss.v110.i07"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/cubble"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
+<p>Building on cubble, I co-mentored the <em>Google Summer of Code 2024</em> R project with Maliny Po (Monash University) and Nathan Yang (Duke University) to develop <code>sugarglider</code>. A line glyph shows one value per time point, but many summaries are an interval, such as the daily minimum and maximum temperature. sugarglider provides functionalities to draw segment and ribbon glyphs to <code>ggplot2</code> and interactive leaflet maps. <em>This work has been published in the R Journal.</em> <a href="https://doi.org/10.32614/RJ-2026-050"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/maliny12/sugarglider"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
+<p>Both cubble and sugarglider are ggplot2 extensions. With Gina Reynolds and Joyce Robbins, I also review the wider ggplot2 extension ecosystem, to help users discover what exists and developers learn how to build their own extensions. <em>This work is an invited submission to WIREs Computational Statistics (minor revision).</em> <a href="https://github.com/jtr13/extensions-review"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
 <!-- Talks: -->
 <!-- -   **Switching between space and time: Spatio-temporal analysis with cubble** -->
 <!--     -   **customised glyphmap with German weather stations** Institute for Geoinformatics, University of Münster, Germany May 2023 [](https://sherryzhang-germany2023.netlify.app) -->
@@ -245,9 +189,9 @@ Figure&nbsp;2: Glyph maps comparing temperature change between 1971-1975 and 201
 <!--     -   **workshop style with exercises (spatial, temporal, and spatio-temporal data, cubble, and glyph map)** R Ladies Melbourne, Australia Oct 2022 [](https://sherryzhang-rladiesmelb2022.netlify.app) -->
 <!-- -   **Cubble: An R package for organizing and wrangling multivariate spatio-temporal data** UseR! 2022 Jun 2022 [](https://sherryzhang-user2022.netlify.app/) -->
 </section>
-<section id="visual-diagnostics-for-constrained-optimisation-with-application-to-guided-tours" class="level2">
-<h2 class="anchored" data-anchor-id="visual-diagnostics-for-constrained-optimisation-with-application-to-guided-tours">Visual Diagnostics for Constrained Optimisation with Application to Guided Tours</h2>
-<p>Projection pursuit is a technique used to find interesting low-dimensional linear projections of high dimension data by optimizing an index function on projection matrices. The index function could be non-linear, computationally expensive to calculate the gradient, and may have local optima, which are also interesting for projection pursuit to explore. This work has designed four diagnostic plots to visualize the optimisation routine in projection pursuit, and <a href="#fig-diag-plot" class="quarto-xref">Figure&nbsp;3</a> is one of them, plotting two optimisation paths in a 5D unit sphere space. <em>This work has been published in the R Journal.</em> <a href="https://journal.r-project.org/articles/RJ-2021-105/"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/ferrn"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
+<section id="interactive-graphics-for-high-dimensional-data" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-graphics-for-high-dimensional-data">Interactive graphics for high-dimensional data</h2>
+<p>Projection pursuit is a technique used to find interesting low-dimensional linear projections of high dimension data by optimizing an index function on projection matrices. The index function could be non-linear, computationally expensive to calculate the gradient, and may have local optima, which are also interesting for projection pursuit to explore. This work has designed four diagnostic plots to visualize the optimisation routine in projection pursuit, and <a href="#fig-diag-plot" class="quarto-xref">Figure&nbsp;2</a> is one of them, plotting two optimisation paths in a 5D unit sphere space. <em>This work has been published in the R Journal.</em> <a href="https://journal.r-project.org/articles/RJ-2021-105/"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/ferrn"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
 <!-- Talk: **Visual diagnostics for constrained optimisation with application to guided tours**: UseR! 2021 July 2021 [](https://sherryzhang-user2021.netlify.app/) -->
 <!-- I don't expect what I just said to fully make sense to you, so let's instead think about cutting double yolk mooncake: -->
 <!-- ```{r echo = FALSE} -->
@@ -262,12 +206,29 @@ Figure&nbsp;2: Glyph maps comparing temperature change between 1971-1975 and 201
 <img src="tour.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diag-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Search paths of a random search and a pseudo derivative optimiser animated in the basis space of a 5D unit sphere.
+Figure&nbsp;2: Search paths of a random search and a pseudo derivative optimiser animated in the basis space of a 5D unit sphere.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>Following on from these diagnostics, I developed squintability and other metrics for assessing projection pursuit indexes, which help guide the choice of optimiser and its settings. <em>This work has been published in Journal of Computational and Graphical Statistics.</em> <a href="https://doi.org/10.1080/10618600.2026.2614076"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a></p>
+<p>Indexes are useful for summarizing multivariate information into a single metric for monitoring, communicating, and decision-making. While most work has focused on defining new indexes for specific purposes, most indexes are not designed and implemented in a way that makes it easy to understand index behavior in different data conditions, and to determine how their structure affects their values and variation in values. I developed a modular data pipeline recommendation to assemble indexes, and it allows investigation of index behavior as part of the development procedure. One can compute indexes with different parameter choices, adjust steps in the index definition by adding, removing, and swapping them to experiment with various index designs, calculate uncertainty measures, and assess indexes’ robustness. <a href="#fig-idx-tour" class="quarto-xref">Figure&nbsp;3</a> shows the Global Gender Gap Index, comprised of four dimensions (economy, education, health, and politics) in a linear combination with equal weights of 0.25. The tour animation, built on the same tour methods, shows how the index value and country ranking changes as the weight assigned to the politics dimension changes. <em>This work has been published in Journal of Computational and Graphical Statistics.</em> <a href="https://doi.org/10.1080/10618600.2024.2374960"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a> <a href="https://github.com/huizezhang-sherry/tidyindex"><i class="fa-brands fa-github" aria-hidden="true"></i></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idx-tour" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idx-tour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="idx-tour.gif" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idx-tour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Exploring the sensitivity of the Global Gender Gap Index (GGGI), by varying the politics component’s contribution. Bangladesh’s GGGI increases substantially when politics gains more weights, indicating that this component plays a large role in it’s relatively high value. Also, politics plays a substantial role in the GGGI’s for the top ranked countries, because each of them drops, to the state of being similar to the middle ranked countries when the politics component’s contribution is reduced.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>I am also a maintainer of the CRAN Task View: <a href="https://cran.r-project.org/web/views/DynamicVisualizations.html">Dynamic Visualizations</a> (2024–now).</p>
 </section>
 </div>
 
@@ -674,6 +635,38 @@ Figure&nbsp;3: Search paths of a random search and a pseudo derivative optimiser
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
