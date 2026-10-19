@@ -5,13 +5,13 @@ about:
   template: jolla
   links: 
     - text: "{{< ai google-scholar size=xl >}} Google Scholar"
-      href: https://scholar.google.com/citations?user=HfvBzAQAAAAJ&hl=it
+      href: https://scholar.google.com/citations?user=HfvBzAQAAAAJ&hl=en
     - icon: github
       text: Github
       href: https://github.com/huizezhang-sherry
     - icon: envelope-fill
       text: Email
-      href: "mailto:huize.Zhang@austin.utexas.edu"
+      href: "mailto:hsherryzhang@utexas.edu"
     - icon: person-lines-fill
       text: CV
       href: cv/H.Sherry-Zhang.pdf
@@ -19,7 +19,7 @@ about:
 # icons are from: https://icons.getbootstrap.com/
 ---
 
-I am a Postdoctoral Fellow in the Department of Statistics and Data Science at the University of Texas at Austin, working with [Roger Peng](https://rdpeng.org/). My research focuses on developing method, visualization, and software tools that support exploratory data analysis. My R package `cubble` won the 2024 [ASA John M. Chambers Statistical Software Award](https://community.amstat.org/jointscsg-section/awards/john-m-chambers). I received my PhD from Monash University in Australia in 2023 under the supervision of [Dianne Cook](https://www.dicook.org/), [Patricia Menéndez](https://www.patriciamenendez.com/about/), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://staff.uic.edu.cn/nicolaslangrene/en). 
+I am a Postdoctoral Fellow in the Department of Statistics and Data Science at the University of Texas at Austin, working with [Roger Peng](https://rdpeng.org/). My research develops visualization methods and software for exploring multivariate and spatio-temporal data, and uses large language models (LLMs) to document and extend the decisions behind a data analysis. My R package `cubble` won the 2024 [ASA John M. Chambers Statistical Software Award](https://community.amstat.org/jointscsg-section/awards/john-m-chambers). I received my PhD from Monash University in Australia in 2023 under the supervision of [Dianne Cook](https://www.dicook.org/), [Patricia Menéndez](https://www.patriciamenendez.com/about/), [Ursula Laa](https://uschilaa.github.io/), and [Nicolas Langrené](https://staff.uic.edu.cn/nicolaslangrene/en). 
 
 <center class="readmore">[Read more about my research &rarr;](research/index.html)</center>
 
